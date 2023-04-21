@@ -8,32 +8,30 @@
 import SwiftUI
 
 struct ExerciseCard: View {
-    
     var exercise: ExerciseModel
+    var background: UIImage
     
     var body: some View {
         VStack (alignment: .center){
-            Spacer()
-            
             Text(exercise.name)
-                .font(.footnote)
+                .font(.title3)
                 .bold()
             
             Text(exercise.desc)
                 .font(.caption2)
             
             Spacer()
-            
-            // Image
         }
+        .foregroundColor(.black)
+        .padding()
         .frame(width: 188, height: 290)
+        .background(.yellow)
         .cornerRadius(10)
-        .border(.black, width: 4) // hanya untuk liat cardnya
     }
 }
 
 struct ExerciseCard_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseCard(exercise: ExerciseModel(id: 1, name: "3 Minute Breathing", duration: "3 Minutes", desc: "Napas dulu coyy 3 menit aje"))
+        ExerciseCard(exercise: ExerciseModel(id: 1, name: "3 Minute Breathing", duration: "3 Minutes", desc: "Napas dulu coyy 3 menit aje"), background: UIImage())
     }
 }

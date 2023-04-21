@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ExerciseModel: Identifiable {
+struct ExerciseModel: Identifiable, Hashable {
     var id: Int
     var name: String
     var duration: String
