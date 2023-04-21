@@ -9,10 +9,10 @@ import Foundation
 
 class BannerViewModel: ObservableObject {
     @Published var quotes = [
-        "\"Relax. Take a breath. Let’s pay attention to what is happening; then we’ll figure out what to do.\"\n– Sylvia Boorstein"
+        Quote(text: "Relax. Take a breath. Let’s pay attention to what is happening; then we’ll figure out what to do.", author: "Sylvia Boorstein")
     ]
     
-    func getRandomQuotes() -> String {
+    func getRandomQuotes() -> Quote {
         let randomInt = Int.random(in: 0..<self.quotes.count)
         return self.quotes[randomInt]
     }

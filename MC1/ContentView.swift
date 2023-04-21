@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var userVM = UserViewModel()
     
     var body: some View {
         TabView {
@@ -16,6 +17,7 @@ struct ContentView: View {
                     Image(systemName: "house")
                     Text("Exercise")
                 }
+                .environmentObject(userVM)
             
             MePage()
                 .tabItem {
