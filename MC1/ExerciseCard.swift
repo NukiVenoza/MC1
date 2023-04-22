@@ -32,6 +32,6 @@ struct ExerciseCard: View {
 
 struct ExerciseCard_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseCard(exercise: ExerciseModel(id: 1, name: "3 Minute Breathing", duration: "3 Minutes", desc: "Napas dulu coyy 3 menit aje"), background: UIImage())
+        ExerciseCard(exercise: ExerciseModel(id: 1, name: "3 Minute Breathing", duration: "3 Minutes", desc: "Napas dulu coyy 3 menit aje",requirement: ["butuh a", "butuh b", "butuh c"]), background: UIImage())
     }
 }
