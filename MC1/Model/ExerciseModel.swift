@@ -12,14 +12,18 @@ struct ExerciseModel: Identifiable, Hashable {
     var name: String
     var duration: String
     var desc: String
+    var backgroundURL: String
+    
     var requirement: [String]
     var icon: String
     
-    init(id: Int, name: String, duration: String, desc: String, requirement: [String], icon: String) {
+    init(id: Int, name: String, duration: String, desc: String, requirement: [String], icon: String, backgroundURL: String) {
         self.id = id
         self.name = name
         self.duration = duration
         self.desc = desc
+        self.backgroundURL = backgroundURL
+
         self.requirement = requirement
         self.icon = icon
     }

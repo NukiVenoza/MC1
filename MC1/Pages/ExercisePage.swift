@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import SwiftUIPager
 
 struct ExercisePage: View {
     @EnvironmentObject var userVM: UserViewModel
     
     @StateObject var bannerVM = BannerViewModel()
     @StateObject var exerciseVM = ExerciseViewModel()
+    @StateObject var page: Page = .first()
+    
+    @State private var currIndex = 0
     
     var body: some View {
         NavigationView {
@@ -24,6 +28,9 @@ struct ExercisePage: View {
                     // Banner
                     HStack(alignment: .top, spacing: 16) {
                         RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(
+                                Color(red: 17/255, green: 118/255, blue: 106/255)
+                            )
                             .frame(width: 5)
                         
                         VStack(alignment: .leading, spacing: 8) {
@@ -57,54 +64,53 @@ struct ExercisePage: View {
                         .fontWeight(.bold)
                     
                     // 3 Card Carousel
-//                    ScrollView(.horizontal, showsIndicators: false) {
-//                        LazyHStack {
-//                            ForEach(exerciseVM.exercises) {ex in
-//                                NavigationLink(destination: ExerciseDetailView(exercise: ex)) {
-//                                    ExerciseCard(exercise: ex, background: UIImage())
-//                                }
-//                            }
-//
-//                        }
-//                    }
+                    Pager(page: page, data: exerciseVM.exercises) { item in
+                        NavigationLink(destination: ExerciseDetailView(exercise: item)) {
+                            ExerciseCard(exercise: item)
+                        }
+                    }
+                    .pagingPriority(.high)
+                    .itemSpacing(30)
+                    .interactive(scale: 0.9)
+                    .itemAspectRatio(9 / 16)
+                    .loopPages(true, repeating: 2)
+                    .onPageChanged { index in
+                        currIndex = index
+                    }
                     
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        ScrollViewReader { value in
-                            ZStack (alignment: .center) {
-                                LazyHStack(alignment: .center, spacing:275) {
-                                    ForEach (exerciseVM.exercises) { item in
-                                        Rectangle()
-                                            .frame(width: 1, height: 1, alignment: .center)
-                                            .foregroundColor(.clear)
-                                            .onAppear() {
-//                                                print(item)
-                                                withAnimation() {
-                                                    value.scrollTo(item, anchor: .center)
-                                                }
-                                            }
-                                    }
-                                }
-
-                                HStack(spacing:10) {
-                                    ForEach(exerciseVM.exercises) { item in
-                                        GeometryReader { geometry in
-                                            ZStack {
-                                                ExerciseCard(exercise: item, background: UIImage())
-                                                    .rotation3DEffect(
-                                                        Angle(degrees: Double(geometry.frame(in:.global).minX - 30) / -20),
-                                                    axis: (x: 0.0, y: 10.0, z: 0.0))
-                                            }
-                                        }
-                                        .frame(width: 275, height: 275)
-                                }
-                           }
-                          .padding(30)
-                          .padding(.bottom, 30)
-                            }
+                    HStack {
+                        if currIndex == 0 {
+                            Circle()
+                                .foregroundColor(Color(red: 17/255, green: 118/255, blue: 106/255))
+                                .frame(width: 10, height: 10)
+                        } else {
+                            Circle()
+                                .foregroundColor(Color(red: 217/255, green: 217/255, blue: 217/255))
+                                .frame(width: 8, height: 8)
                         }
                         
+                        if currIndex == 1 {
+                            Circle()
+                                .foregroundColor(Color(red: 17/255, green: 118/255, blue: 106/255))
+                                .frame(width: 10, height: 10)
+                        } else {
+                            Circle()
+                                .foregroundColor(Color(red: 217/255, green: 217/255, blue: 217/255))
+                                .frame(width: 8, height: 8)
+                        }
+                        
+                        if currIndex == 2 {
+                            Circle()
+                                .foregroundColor(Color(red: 17/255, green: 118/255, blue: 106/255))
+                                .frame(width: 10, height: 10)
+                        } else {
+                            Circle()
+                                .foregroundColor(Color(red: 217/255, green: 217/255, blue: 217/255))
+                                .frame(width: 8, height: 8)
+                        }
                     }
-                    .offset(y: -30)
+                    .frame(maxWidth: .infinity)
+                    .frame(width: .infinity, alignment: .center)
                 }
             }
             .padding()

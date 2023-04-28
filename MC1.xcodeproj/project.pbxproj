@@ -10,7 +10,10 @@
 		0B1F741229F281EB009C4901 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F741129F281EB009C4901 /* QuoteModel.swift */; };
 		0B1F741429F28656009C4901 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F741329F28656009C4901 /* UserViewModel.swift */; };
 		0B1F741629F28661009C4901 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F741529F28661009C4901 /* UserModel.swift */; };
+
+		0B1F741B29F685B0009C4901 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = 0B1F741A29F685B0009C4901 /* SwiftUIPager */; };
 		1649416829F39F980036424E /* ExerciseRequirementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1649416729F39F980036424E /* ExerciseRequirementView.swift */; };
+
 		D0285F3A29EFF32600B9D73D /* MC1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0285F3929EFF32600B9D73D /* MC1App.swift */; };
 		D0285F3C29EFF32600B9D73D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0285F3B29EFF32600B9D73D /* ContentView.swift */; };
 		D0285F3E29EFF32700B9D73D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0285F3D29EFF32700B9D73D /* Assets.xcassets */; };
@@ -50,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B1F741B29F685B0009C4901 /* SwiftUIPager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +147,9 @@
 			dependencies = (
 			);
 			name = MC1;
+			packageProductDependencies = (
+				0B1F741A29F685B0009C4901 /* SwiftUIPager */,
+			);
 			productName = MC1;
 			productReference = D0285F3629EFF32600B9D73D /* MC1.app */;
 			productType = "com.apple.product-type.application";
@@ -171,6 +178,9 @@
 				Base,
 			);
 			mainGroup = D0285F2D29EFF32600B9D73D;
+			packageReferences = (
+				0B1F741929F685B0009C4901 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
+			);
 			productRefGroup = D0285F3729EFF32600B9D73D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -413,6 +423,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0B1F741929F685B0009C4901 /* XCRemoteSwiftPackageReference "SwiftUIPager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fermoya/SwiftUIPager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0B1F741A29F685B0009C4901 /* SwiftUIPager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B1F741929F685B0009C4901 /* XCRemoteSwiftPackageReference "SwiftUIPager" */;
+			productName = SwiftUIPager;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D0285F2E29EFF32600B9D73D /* Project object */;
 }
