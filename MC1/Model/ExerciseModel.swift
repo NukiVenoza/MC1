@@ -13,7 +13,6 @@ struct ExerciseModel: Identifiable, Hashable {
     var duration: String
     var desc: String
     var backgroundURL: String
-    
     var requirement: [String]
     var icon: String
     
@@ -23,7 +22,6 @@ struct ExerciseModel: Identifiable, Hashable {
         self.duration = duration
         self.desc = desc
         self.backgroundURL = backgroundURL
-
         self.requirement = requirement
         self.icon = icon
     }
