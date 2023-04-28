@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct MePage: View {
+    @State var pushNotification: Bool = true
+    @State var vibrationMode: Bool = true
+    
+    @State var currentDate = Date.now
+    
+    @State private var showDateModal = false
+    @State private var buttonOpacity = 1.0
+    
+    let days = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
     
     var body: some View {
-        
-        @State var currentTime = getTime()
         
         NavigationView {
             VStack (spacing: 20){
@@ -23,67 +30,24 @@ struct MePage: View {
                     .foregroundColor(Color(red: 30 / 255, green: 30 / 255, blue: 30 / 255, opacity: 100))
                 
                 HStack (spacing: 14){
-                    VStack{
-                        Text("Su")
-                            .foregroundColor(.white)
-                            .font(.system(size: 12))
-                        Circle()
-                            .frame(maxWidth: 30)
-                            .foregroundColor(.white)
-                    }
-                    
-                    VStack{
-                        Text("Mo")
-                            .foregroundColor(.white)
-                            .font(.system(size: 12))
-                        Circle()
-                            .frame(maxWidth: 30)
-                            .foregroundColor(.white)
-                    }
-                    
-                    VStack{
-                        Text("Tu")
-                            .foregroundColor(.white)
-                            .font(.system(size: 12))
-                        Circle()
-                            .frame(maxWidth: 30)
-                            .foregroundColor(.white)
-                    }
-                    
-                    VStack{
-                        Text("We")
-                            .foregroundColor(.white)
-                            .font(.system(size: 12))
-                        Circle()
-                            .frame(maxWidth: 30)
-                            .foregroundColor(.white)
-                    }
-                    
-                    VStack{
-                        Text("Th")
-                            .foregroundColor(.white)
-                            .font(.system(size: 12))
-                        Circle()
-                            .frame(maxWidth: 30)
-                            .foregroundColor(.white)
-                    }
-                    
-                    VStack{
-                        Text("Fr")
-                            .foregroundColor(.white)
-                            .font(.system(size: 12))
-                        Circle()
-                            .frame(maxWidth: 30)
-                            .foregroundColor(.white)
-                    }
-                    
-                    VStack{
-                        Text("Sa")
-                            .foregroundColor(.white)
-                            .font(.system(size: 12))
-                        Circle()
-                            .frame(maxWidth: 30)
-                            .foregroundColor(.white)
+                    ForEach(days, id: \.self) { day in
+                        VStack{
+                            Text(day)
+                                .foregroundColor(.white)
+                                .font(.system(size: 12))
+                            
+                            ZStack{
+                                Circle()
+                                    .frame(maxWidth: 30)
+                                    .foregroundColor(.white)
+                                
+                                
+                                Image("star")
+                                    .resizable()
+                                    .frame(maxWidth: 25, maxHeight: 25)
+                            }
+                            
+                        }
                     }
                     
                 }
@@ -134,14 +98,40 @@ struct MePage: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading)
                     .foregroundColor(Color(red: 85 / 255, green: 85 / 255, blue: 85 / 255, opacity: 100))
+                    .padding(.top, 30)
                 
                 List {
-                    Toggle(isOn: .constant(true)) {
+                    Toggle(isOn: $pushNotification) {
                         Text("Push Notification")
                             .font(.system(size: 15))
                             .foregroundColor(Color(red: 85 / 255, green: 85 / 255, blue: 85 / 255, opacity: 100))
                         
                     }
+                    
+                    //                    HStack{
+                    //                        Text("Wake Up Time")
+                    //                            .font(.system(size: 15))
+                    //                            .foregroundColor(Color(red: 85 / 255, green: 85 / 255, blue: 85 / 255, opacity: 100))
+                    //
+                    //                        Spacer()
+                    //
+                    //                        Button("\(Date.now, style: .time)") {
+                    //                            showDateModal = true
+                    //                            buttonOpacity = 0.0
+                    //                        }
+                    //                        .buttonStyle(.bordered)
+                    //                        .foregroundColor(Color.black)
+                    //                        .font(.system(size: 15))
+                    //                        .background(Color(red: 239 / 255, green: 239 / 255, blue: 240 / 255, opacity: 100))
+                    //                        .cornerRadius(8)
+                    //                        .opacity(buttonOpacity)
+                    //
+                    //                        if showDateModal {
+                    //                            DatePicker("Select a Date", selection: $currentDate, in: ...Date.now, displayedComponents: .hourAndMinute)
+                    //                                .datePickerStyle(.wheel)
+                    //                                .labelsHidden()
+                    //                        }
+                    //                    }
                     
                     HStack{
                         Text("Wake Up Time")
@@ -150,38 +140,29 @@ struct MePage: View {
                         
                         Spacer()
                         
-                        TextField("Current Time", text: $currentTime)
-                            .font(.system(size: 15))
-                            .foregroundColor(Color(red: 85 / 255, green: 85 / 255, blue: 85 / 255, opacity: 100))
-                            .frame(width: 80, height: 34)
-                            .background(Color(red: 118 / 255, green: 118 / 255, blue: 128 / 255, opacity: 0.12))
-                            .cornerRadius(8)
-                            .multilineTextAlignment(.center)
+                        DatePicker("Wake Up Time", selection: $currentDate, in: ...Date.now, displayedComponents: .hourAndMinute)
+                            .labelsHidden()
+                            .accentColor(Color(red: 17 / 255, green: 118 / 255, blue: 108 / 255, opacity: 100))
+                        
                     }
                     
-                    Toggle(isOn: .constant(true)) {
+                    Toggle(isOn: $vibrationMode) {
                         Text("Vibration Mode")
                             .font(.system(size: 15))
                             .foregroundColor(Color(red: 85 / 255, green: 85 / 255, blue: 85 / 255, opacity: 100))
                     }
                     
+                    
                 }
-                //                .scrollContentBackground(.hidden)
-                .background(Color.white)
+                .listStyle(PlainListStyle())
                 .cornerRadius(10)
                 
             }
+            .padding(.top, 10)
             .navigationTitle("Me")
         }
     }
     
-    func getTime() -> String {
-        let formatter = DateFormatter()
-        formatter.timeStyle = .short
-        let dateString = formatter.string(from: Date())
-        return dateString
-        
-    }
 }
 
 struct MePage_Previews: PreviewProvider {
