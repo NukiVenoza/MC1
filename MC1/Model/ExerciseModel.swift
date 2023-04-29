@@ -15,8 +15,9 @@ struct ExerciseModel: Identifiable, Hashable {
     var backgroundURL: String
     var requirement: [String]
     var icon: String
+    var bg: String
     
-    init(id: Int, name: String, duration: String, desc: String, requirement: [String], icon: String, backgroundURL: String) {
+    init(id: Int, name: String, duration: String, desc: String, requirement: [String], icon: String, backgroundURL: String, bg: String) {
         self.id = id
         self.name = name
         self.duration = duration
@@ -24,5 +25,6 @@ struct ExerciseModel: Identifiable, Hashable {
         self.backgroundURL = backgroundURL
         self.requirement = requirement
         self.icon = icon
+        self.bg = bg
     }
 }
