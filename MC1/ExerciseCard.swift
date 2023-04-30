@@ -12,6 +12,9 @@ struct ExerciseCard: View {
     
     var body: some View {
         VStack (alignment: .center){
+<<<<<<< HEAD
+//            
+=======
 //            Text(exercise.name)
 //                .font(.title3)
 //                .bold()
@@ -20,9 +23,8 @@ struct ExerciseCard: View {
 //                .font(.caption2)
 //
 //            Spacer()
+>>>>>>> main
         }
-        .foregroundColor(.black)
-        .padding()
         .frame(width: 189, height: 292)
         .background(
             Image(exercise.backgroundURL)
