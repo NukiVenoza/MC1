@@ -14,16 +14,7 @@
 		0B61701129FD80F90020A2DE /* EndlessHorizontalScrollingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61701029FD80F90020A2DE /* EndlessHorizontalScrollingView.swift */; };
 		0BBC032E29FBD63F008FEB19 /* HStackScrollingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBC032D29FBD63F008FEB19 /* HStackScrollingModifier.swift */; };
 		1649416829F39F980036424E /* ExerciseRequirementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1649416729F39F980036424E /* ExerciseRequirementView.swift */; };
-<<<<<<< Updated upstream
 		D0219A0429FC191F000BFC61 /* ExercisePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0219A0329FC191F000BFC61 /* ExercisePlayerView.swift */; };
-		D0219A0629FC19AB000BFC61 /* ExerciseRunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0219A0529FC19AB000BFC61 /* ExerciseRunView.swift */; };
-=======
-<<<<<<< HEAD
-=======
-		D0219A0429FC191F000BFC61 /* ExercisePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0219A0329FC191F000BFC61 /* ExercisePlayerView.swift */; };
-		D0219A0629FC19AB000BFC61 /* ExerciseRunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0219A0529FC19AB000BFC61 /* ExerciseRunView.swift */; };
->>>>>>> main
->>>>>>> Stashed changes
 		D0285F3A29EFF32600B9D73D /* MC1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0285F3929EFF32600B9D73D /* MC1App.swift */; };
 		D0285F3C29EFF32600B9D73D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0285F3B29EFF32600B9D73D /* ContentView.swift */; };
 		D0285F3E29EFF32700B9D73D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0285F3D29EFF32700B9D73D /* Assets.xcassets */; };
@@ -46,7 +37,6 @@
 		0BBC032D29FBD63F008FEB19 /* HStackScrollingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStackScrollingModifier.swift; sourceTree = "<group>"; };
 		1649416729F39F980036424E /* ExerciseRequirementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRequirementView.swift; sourceTree = "<group>"; };
 		D0219A0329FC191F000BFC61 /* ExercisePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisePlayerView.swift; sourceTree = "<group>"; };
-		D0219A0529FC19AB000BFC61 /* ExerciseRunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRunView.swift; sourceTree = "<group>"; };
 		D0285F3629EFF32600B9D73D /* MC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0285F3929EFF32600B9D73D /* MC1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC1App.swift; sourceTree = "<group>"; };
 		D0285F3B29EFF32600B9D73D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,7 +91,6 @@
 				D0984DCF29F26E730090E88A /* ExerciseDetailView.swift */,
 				1649416729F39F980036424E /* ExerciseRequirementView.swift */,
 				D0219A0329FC191F000BFC61 /* ExercisePlayerView.swift */,
-				D0219A0529FC19AB000BFC61 /* ExerciseRunView.swift */,
 				D0984DCC29F26E2D0090E88A /* Pages */,
 				D0984DCB29F26E250090E88A /* ViewModel */,
 				D0984DCA29F26E1F0090E88A /* Model */,
@@ -234,15 +223,7 @@
 				D0984DD029F26E730090E88A /* ExerciseDetailView.swift in Sources */,
 				D037F82329F80BF40030C590 /* SetTimeModel.swift in Sources */,
 				D0984DD829F26FCD0090E88A /* ExercisePage.swift in Sources */,
-<<<<<<< Updated upstream
-				D0219A0629FC19AB000BFC61 /* ExerciseRunView.swift in Sources */,
-=======
-<<<<<<< HEAD
 				0B61701129FD80F90020A2DE /* EndlessHorizontalScrollingView.swift in Sources */,
-=======
-				D0219A0629FC19AB000BFC61 /* ExerciseRunView.swift in Sources */,
->>>>>>> main
->>>>>>> Stashed changes
 				1649416829F39F980036424E /* ExerciseRequirementView.swift in Sources */,
 				D0984DD429F26F810090E88A /* BannerViewModel.swift in Sources */,
 				D0285F3C29EFF32600B9D73D /* ContentView.swift in Sources */,
