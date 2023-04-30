@@ -13,9 +13,11 @@ struct ExercisePage: View {
     
     @StateObject var bannerVM = BannerViewModel()
     @StateObject var exerciseVM = ExerciseViewModel()
-    @StateObject var page: Page = .first()
     
-    @State private var currIndex = 0
+    @State var currIndex = 0
+    @State var indexes = [2, 0, 1]
+    @State var scrollDirection = "none"
+    @State var isDragging = false
     
     var body: some View {
         NavigationView {
@@ -47,6 +49,7 @@ struct ExercisePage: View {
                                 
                             }
                             .padding(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
+                            .frame(maxWidth: .infinity)
                             
                             Image(systemName: "arrow.clockwise")
                                 .padding()
@@ -64,20 +67,47 @@ struct ExercisePage: View {
                             .font(.title2)
                             .fontWeight(.bold)
                         
-                        // 3 Card Carousel
-                        Pager(page: page, data: exerciseVM.exercises) { item in
-                            NavigationLink(destination: ExerciseDetailView(exercise: item)) {
-                                ExerciseCard(exercise: item)
+                        GeometryReader { geometry in
+                            HStack(spacing: 30) {
+                                ForEach(indexes, id: \.self) { idx in
+                                    NavigationLink(destination: ExerciseDetailView(exercise: exerciseVM.exercises[idx])) {
+                                        ExerciseCard(exercise: exerciseVM.exercises[idx])
+                                    }
+                                    .simultaneousGesture(DragGesture()
+                                        .onChanged({ _ in
+                                            self.isDragging = true
+                                        })
+                                        .onEnded({ _ in
+                                            self.isDragging = false
+                                        })
+                                    )
+                                    .disabled(self.isDragging)
+                                }
+                            }
+                            .frame(width: geometry.size.width, alignment: .center)
+                            .modifier(HStackScrollingModifier(items: exerciseVM.exercises.count, itemWidth: 189, itemSpacing: 30, index: $currIndex, direction: $scrollDirection, isDragging: $isDragging))
+                        }
+                        .onChange(of: currIndex) { _ in
+                            // scroll ke kiri
+                            if scrollDirection == "left" {
+                                if indexes.first! == 2 {
+                                    indexes.insert(1, at: 0)
+                                } else if indexes.first! == 1 {
+                                    indexes.insert(0, at: 0)
+                                } else {
+                                    indexes.insert(2, at: 0)
+                                }
+                            } else if scrollDirection == "right" {
+                                if indexes.last! == 2 {
+                                    indexes.append(0)
+                                } else if indexes.last! == 1 {
+                                    indexes.append(2)
+                                } else {
+                                    indexes.append(1)
+                                }
                             }
                         }
-                        .pagingPriority(.high)
-                        .itemSpacing(30)
-                        .interactive(scale: 0.9)
-                        .itemAspectRatio(9 / 16)
-                        .loopPages(true, repeating: 2)
-                        .onPageChanged { index in
-                            currIndex = index
-                        }
+                        .frame(height: 292)
                         
                         HStack {
                             if currIndex == 0 {

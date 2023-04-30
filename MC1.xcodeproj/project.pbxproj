@@ -11,9 +11,19 @@
 		0B1F741429F28656009C4901 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F741329F28656009C4901 /* UserViewModel.swift */; };
 		0B1F741629F28661009C4901 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F741529F28661009C4901 /* UserModel.swift */; };
 		0B1F741B29F685B0009C4901 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = 0B1F741A29F685B0009C4901 /* SwiftUIPager */; };
+		0B61701129FD80F90020A2DE /* EndlessHorizontalScrollingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61701029FD80F90020A2DE /* EndlessHorizontalScrollingView.swift */; };
+		0BBC032E29FBD63F008FEB19 /* HStackScrollingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBC032D29FBD63F008FEB19 /* HStackScrollingModifier.swift */; };
 		1649416829F39F980036424E /* ExerciseRequirementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1649416729F39F980036424E /* ExerciseRequirementView.swift */; };
+<<<<<<< Updated upstream
 		D0219A0429FC191F000BFC61 /* ExercisePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0219A0329FC191F000BFC61 /* ExercisePlayerView.swift */; };
 		D0219A0629FC19AB000BFC61 /* ExerciseRunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0219A0529FC19AB000BFC61 /* ExerciseRunView.swift */; };
+=======
+<<<<<<< HEAD
+=======
+		D0219A0429FC191F000BFC61 /* ExercisePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0219A0329FC191F000BFC61 /* ExercisePlayerView.swift */; };
+		D0219A0629FC19AB000BFC61 /* ExerciseRunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0219A0529FC19AB000BFC61 /* ExerciseRunView.swift */; };
+>>>>>>> main
+>>>>>>> Stashed changes
 		D0285F3A29EFF32600B9D73D /* MC1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0285F3929EFF32600B9D73D /* MC1App.swift */; };
 		D0285F3C29EFF32600B9D73D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0285F3B29EFF32600B9D73D /* ContentView.swift */; };
 		D0285F3E29EFF32700B9D73D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0285F3D29EFF32700B9D73D /* Assets.xcassets */; };
@@ -32,6 +42,8 @@
 		0B1F741129F281EB009C4901 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuoteModel.swift; path = MC1/Model/QuoteModel.swift; sourceTree = SOURCE_ROOT; };
 		0B1F741329F28656009C4901 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		0B1F741529F28661009C4901 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		0B61701029FD80F90020A2DE /* EndlessHorizontalScrollingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessHorizontalScrollingView.swift; sourceTree = "<group>"; };
+		0BBC032D29FBD63F008FEB19 /* HStackScrollingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStackScrollingModifier.swift; sourceTree = "<group>"; };
 		1649416729F39F980036424E /* ExerciseRequirementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRequirementView.swift; sourceTree = "<group>"; };
 		D0219A0329FC191F000BFC61 /* ExercisePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisePlayerView.swift; sourceTree = "<group>"; };
 		D0219A0529FC19AB000BFC61 /* ExerciseRunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRunView.swift; sourceTree = "<group>"; };
@@ -81,6 +93,8 @@
 		D0285F3829EFF32600B9D73D /* MC1 */ = {
 			isa = PBXGroup;
 			children = (
+				0BBC032D29FBD63F008FEB19 /* HStackScrollingModifier.swift */,
+				0B61701029FD80F90020A2DE /* EndlessHorizontalScrollingView.swift */,
 				D0285F3929EFF32600B9D73D /* MC1App.swift */,
 				D0285F3B29EFF32600B9D73D /* ContentView.swift */,
 				D0984DCD29F26E5B0090E88A /* ExerciseCard.swift */,
@@ -216,10 +230,19 @@
 				D0219A0429FC191F000BFC61 /* ExercisePlayerView.swift in Sources */,
 				D0984DDA29F26FDD0090E88A /* MePage.swift in Sources */,
 				D0984DCE29F26E5B0090E88A /* ExerciseCard.swift in Sources */,
+				0BBC032E29FBD63F008FEB19 /* HStackScrollingModifier.swift in Sources */,
 				D0984DD029F26E730090E88A /* ExerciseDetailView.swift in Sources */,
 				D037F82329F80BF40030C590 /* SetTimeModel.swift in Sources */,
 				D0984DD829F26FCD0090E88A /* ExercisePage.swift in Sources */,
+<<<<<<< Updated upstream
 				D0219A0629FC19AB000BFC61 /* ExerciseRunView.swift in Sources */,
+=======
+<<<<<<< HEAD
+				0B61701129FD80F90020A2DE /* EndlessHorizontalScrollingView.swift in Sources */,
+=======
+				D0219A0629FC19AB000BFC61 /* ExerciseRunView.swift in Sources */,
+>>>>>>> main
+>>>>>>> Stashed changes
 				1649416829F39F980036424E /* ExerciseRequirementView.swift in Sources */,
 				D0984DD429F26F810090E88A /* BannerViewModel.swift in Sources */,
 				D0285F3C29EFF32600B9D73D /* ContentView.swift in Sources */,

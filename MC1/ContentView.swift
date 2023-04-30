@@ -11,19 +11,22 @@ struct ContentView: View {
     @StateObject var userVM = UserViewModel()
     
     var body: some View {
-        TabView {
-            ExercisePage()
-                .tabItem {
-                    Image(systemName: "house")
-                    Text("Exercise")
-                }
-                .environmentObject(userVM)
-            
-            MePage()
-                .tabItem {
-                    Image(systemName: "gear")
-                    Text("Me")
-                }
+//        EndlessHorizontalScrollingView()
+        NavigationView {
+            TabView {
+                ExercisePage()
+                    .tabItem {
+                        Image(systemName: "house")
+                        Text("Exercise")
+                    }
+                    .environmentObject(userVM)
+
+                MePage()
+                    .tabItem {
+                        Image(systemName: "gear")
+                        Text("Me")
+                    }
+            }
         }
     }
         
