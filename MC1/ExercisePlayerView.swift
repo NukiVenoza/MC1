@@ -98,7 +98,7 @@ struct ExercisePlayerView: View {
                 .opacity(progressBarOpacity)
                 .onAppear {
                     // Nanti diganti total duration dari sound yg dipake
-                    totalTime = 10.0
+                    totalTime = 100.0
                 }
                 .onReceive(Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()) { _ in
                     if isPlaying {
