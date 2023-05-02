@@ -101,6 +101,6 @@ struct HStackScrollingModifier: ViewModifier {
             )
             // Animate snapping
             .animation(Animation
-                .spring(response: 0.5, dampingFraction: 2, blendDuration: 3), value: scrollOffset)
+                .spring(response: 0.5, dampingFraction: 3, blendDuration: 1), value: scrollOffset)
     }
 }
