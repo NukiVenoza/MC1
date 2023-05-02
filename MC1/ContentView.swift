@@ -9,10 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var userVM = UserViewModel()
+    @StateObject var router = Router()
     
     var body: some View {
 //        EndlessHorizontalScrollingView()
-        NavigationView {
+        NavigationStack(path: $router.path) {
             TabView {
                 ExercisePage()
                     .tabItem {
@@ -20,6 +21,7 @@ struct ContentView: View {
                         Text("Exercise")
                     }
                     .environmentObject(userVM)
+                    .environmentObject(router)
 
                 MePage()
                     .tabItem {
@@ -27,6 +29,11 @@ struct ContentView: View {
                         Text("Me")
                     }
             }
+            .navigationTitle("Focus")
+        }
+        .navigationDestination(for: ExerciseModel.self) { ex in
+            ExerciseDetailView(exercise: ex)
+                .environmentObject(router)
         }
     }
         

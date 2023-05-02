@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CompletedView: View {
+    @EnvironmentObject var router: Router
     @State private var starOpacity = false
     @State private var scale = 3.0
     @State private var circleTextOpacity = false
@@ -52,6 +53,7 @@ struct CompletedView: View {
                 
                 Button("Next") {
                     // dipake buat action dulu ya nti ku percantik lagi
+                    router.reset()
                 }
             }
             .frame(maxWidth: .infinity)
@@ -61,6 +63,7 @@ struct CompletedView: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden()
     }
     
     func delayBadgeScale() async {
@@ -94,5 +97,6 @@ struct CompletedView: View {
 struct CompletedView_Previews: PreviewProvider {
     static var previews: some View {
         CompletedView()
+            .environmentObject(Router())
     }
 }
