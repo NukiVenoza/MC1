@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ExerciseRequirementView: View {
+    @EnvironmentObject var router: Router
+    
     var exercise: ExerciseModel
     
     var body: some View {
@@ -42,20 +44,24 @@ struct ExerciseRequirementView: View {
                     }
                         
                 }
-            .padding()
-            }
-            Text("Continue")
-                .fontWeight(.semibold)
-                .font(.system(size: 17))
-                .frame(maxWidth: .infinity)
-                .foregroundColor(.white)
                 .padding()
-                .background(Color(red: 0.066, green: 0.463, blue: 0.415))
-                .cornerRadius(10)
-
+            }
             
-                .padding(.bottom,20)
-                .padding(30)
+            NavigationLink(destination: ExercisePlayerView(exercise: exercise)
+                .environmentObject(router)) {
+                Text("Continue")
+                    .fontWeight(.semibold)
+                    .font(.system(size: 17))
+                    .frame(maxWidth: .infinity)
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color(red: 0.066, green: 0.463, blue: 0.415))
+                    .cornerRadius(10)
+
+                
+                    .padding(.bottom,20)
+                    .padding(30)
+            }
         }
         
     }
@@ -65,5 +71,6 @@ struct ExerciseRequirementView: View {
 struct ExerciseRequirementView_Previews: PreviewProvider {
     static var previews: some View {
         ExerciseRequirementView(exercise: ExerciseModel(id: 1, name: "3 Minutes Breath", duration: "3 Minutes", desc: "Using mindfulness of breathing for short periods at set times and when required. Best for dealing with mind wandering, and learning to be gentle with yourself.", requirement: ["Airpods or a conducive place", "A safe place for sit or lay down", "Turn on focus mode or do not disturb"], icon: "icon3MB", backgroundURL: "Cards/3MB", bg: "bg3MB"))
+            .environmentObject(Router())
     }
 }

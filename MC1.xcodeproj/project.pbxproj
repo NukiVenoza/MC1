@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0CD44A2A001C7C0077EC90 /* CompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0CD4492A001C7C0077EC90 /* CompletedView.swift */; };
+		0B0CD44C2A00FCBC0077EC90 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0CD44B2A00FCBC0077EC90 /* Router.swift */; };
 		0B1F741229F281EB009C4901 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F741129F281EB009C4901 /* QuoteModel.swift */; };
 		0B1F741429F28656009C4901 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F741329F28656009C4901 /* UserViewModel.swift */; };
 		0B1F741629F28661009C4901 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F741529F28661009C4901 /* UserModel.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B0CD4492A001C7C0077EC90 /* CompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedView.swift; sourceTree = "<group>"; };
+		0B0CD44B2A00FCBC0077EC90 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		0B1F741129F281EB009C4901 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuoteModel.swift; path = MC1/Model/QuoteModel.swift; sourceTree = SOURCE_ROOT; };
 		0B1F741329F28656009C4901 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		0B1F741529F28661009C4901 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 				0B61701029FD80F90020A2DE /* EndlessHorizontalScrollingView.swift */,
 				D0285F3929EFF32600B9D73D /* MC1App.swift */,
 				D0285F3B29EFF32600B9D73D /* ContentView.swift */,
+				0B0CD44B2A00FCBC0077EC90 /* Router.swift */,
 				D0984DCD29F26E5B0090E88A /* ExerciseCard.swift */,
 				D0984DCF29F26E730090E88A /* ExerciseDetailView.swift */,
 				1649416729F39F980036424E /* ExerciseRequirementView.swift */,
@@ -133,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				D0984DD729F26FCD0090E88A /* ExercisePage.swift */,
+				0B0CD4492A001C7C0077EC90 /* CompletedView.swift */,
 				D0984DD929F26FDD0090E88A /* MePage.swift */,
 			);
 			path = Pages;
@@ -220,6 +226,7 @@
 				D0984DDA29F26FDD0090E88A /* MePage.swift in Sources */,
 				D0984DCE29F26E5B0090E88A /* ExerciseCard.swift in Sources */,
 				0BBC032E29FBD63F008FEB19 /* HStackScrollingModifier.swift in Sources */,
+				0B0CD44C2A00FCBC0077EC90 /* Router.swift in Sources */,
 				D0984DD029F26E730090E88A /* ExerciseDetailView.swift in Sources */,
 				D037F82329F80BF40030C590 /* SetTimeModel.swift in Sources */,
 				D0984DD829F26FCD0090E88A /* ExercisePage.swift in Sources */,
@@ -228,6 +235,7 @@
 				D0984DD429F26F810090E88A /* BannerViewModel.swift in Sources */,
 				D0285F3C29EFF32600B9D73D /* ContentView.swift in Sources */,
 				D0285F3A29EFF32600B9D73D /* MC1App.swift in Sources */,
+				0B0CD44A2A001C7C0077EC90 /* CompletedView.swift in Sources */,
 				D0984DD629F26F950090E88A /* ExerciseViewModel.swift in Sources */,
 				0B1F741629F28661009C4901 /* UserModel.swift in Sources */,
 				D0984DD229F26F660090E88A /* ExerciseModel.swift in Sources */,
