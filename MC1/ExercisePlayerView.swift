@@ -142,6 +142,7 @@ struct ExercisePlayerView: View {
 
             }
         }
+        .navigationBarBackButtonHidden()
         
     }
     
