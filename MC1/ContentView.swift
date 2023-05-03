@@ -48,6 +48,7 @@ struct ContentView: View {
                 } else if path == "done" {
                     CompletedView()
                         .environmentObject(router)
+                        .environmentObject(userVM)
                 }
             }
             .navigationDestination(for: ExerciseModel.self) { ex in

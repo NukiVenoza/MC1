@@ -134,15 +134,13 @@ struct ExercisePlayerView: View {
                     progress = currentTime
                     
                     if currentTime >= totalTime {
-                        
                         isPlaying = false
                         startAnimate = false
                         scaleAnimate = false
                         repeatAnimation = 0
                         animationColor = Color(red: 17 / 255, green: 118 / 255, blue: 106 / 255, opacity: 100)
                         audioPlayer.stop()
-                        router.path.append("done")
-
+//                        router.path.append("done")
                     }
                 }
             }

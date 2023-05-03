@@ -10,6 +10,7 @@ import SwiftUI
 struct CompletedView: View {
     @EnvironmentObject var router: Router
     @EnvironmentObject var userVM: UserViewModel
+    
     @State private var starOpacity = false
     @State private var scale = 3.0
     @State private var circleTextOpacity = false
@@ -17,6 +18,7 @@ struct CompletedView: View {
     @State private var circleScale = 1.0
     @State private var offsetY: CGFloat = 0
     @State private var textOpacity = false
+    @State private var textHeight = 0.0
     @State private var text = "Exercise done!"
     private let lastText = "days of mindfulness!"
     
@@ -34,33 +36,27 @@ struct CompletedView: View {
                         .opacity(circleTextOpacity ? 1.0 : 0.0)
                         .scaleEffect(circleScale, anchor: .center)
                         .task(delayBadgeScale)
-                    
+
                     Image("star")
                         .resizable()
                         .opacity(starOpacity ? 1.0 : 0.0)
                         .scaleEffect(scale, anchor: .center)
                         .task(delayScale)
                         .frame(width: 100, height: 100)
-                    
-                    Text("31")
-                        .bold()
-                        .font(.system(size: 96, design: .rounded))
-                        .offset(y: 100)
-                        .opacity(textOpacity ? 1.0 : 0.0)
                 }
-                .offset(y: offsetY)
                 .frame(width: 125, height: 125)
+                
+                Text("31")
+                    .bold()
+                    .font(.system(size: 96, design: .rounded))
+//                    .offset(y: 100)
+                    .opacity(textOpacity ? 1.0 : 0.0)
+                    .frame(height: textHeight)
                 
                 Text(text)
                     .opacity(circleTextOpacity ? 1.0 : 0.0)
                     .font(.system(size: 24))
                     .bold()
-                
-                
-//                NavigationLink(destination: ExercisePlayerView(exercise: exercise)
-//                    .environmentObject(router)) {
-//
-//                }
                 
                 Button {
                     // dipake buat action dulu ya nti ku percantik lagi
@@ -100,6 +96,7 @@ struct CompletedView: View {
             circleScale = 0.6
             scale = 0.6
             offsetY = -80
+            textHeight = 60
             textOpacity = true
             text = lastText
         }
