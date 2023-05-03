@@ -11,15 +11,17 @@ struct ContentView: View {
     @StateObject var userVM = UserViewModel()
     @StateObject var router = Router()
     
+    @State var selection = 1
+    
     var body: some View {
 //        EndlessHorizontalScrollingView()
         NavigationStack(path: $router.path) {
-            TabView {
+            TabView(selection: $selection) {
                 ExercisePage()
                     .tabItem {
                         Image(systemName: "house")
                         Text("Exercise")
-                    }
+                    }.tag(1)
                     .environmentObject(userVM)
                     .environmentObject(router)
 
@@ -28,9 +30,10 @@ struct ContentView: View {
                         Image(systemName: "gear")
                         Text("Me")
                     }
+                    .tag(2)
                     .environmentObject(userVM)
             }
-            .navigationTitle("Focus")
+            .navigationTitle(selection == 1 ? "Focus" : "Me")
         }
         .navigationDestination(for: ExerciseModel.self) { ex in
             ExerciseDetailView(exercise: ex)

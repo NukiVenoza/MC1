@@ -144,7 +144,6 @@ struct ExercisePage: View {
                 }
             }
             .padding()
-            .navigationTitle("Focus")
             
             // overlay disini
             VStack {
@@ -156,6 +155,8 @@ struct ExercisePage: View {
                 .environmentObject(router)
                 .environmentObject(userVM)
         }
+        .navigationTitle("Focus")
+
     }
 }
 
