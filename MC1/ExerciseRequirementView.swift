@@ -24,7 +24,7 @@ struct ExerciseRequirementView: View {
                 }){
                     Text("Close")
                         .foregroundColor(Color(red: 0.066, green: 0.463, blue: 0.415))
-                        
+                    
                 }
                 .padding(.leading,20)
                 Spacer()
@@ -39,50 +39,53 @@ struct ExerciseRequirementView: View {
                 .padding(50)
             
             VStack(alignment: .leading){
-            ForEach(exercise.requirement, id: \.self) { list in
+                ForEach(exercise.requirement, id: \.self) { list in
                     HStack{
                         Label{
                             Text(list)
                                 .fontWeight(.semibold)
                                 .font(.system(size: 15))
                             
-
+                            
                         }icon: {
-                        Image(systemName: "checkmark.circle")
-                            .resizable()
-                            .foregroundColor(Color(red: 0.066, green: 0.463, blue: 0.415))
-                            .frame(width: 33, height: 33)
-    
+                            Image(systemName: "checkmark.circle")
+                                .resizable()
+                                .foregroundColor(Color(red: 0.066, green: 0.463, blue: 0.415))
+                                .frame(width: 33, height: 33)
+                            
                         }
                         
-                            
-                    }
                         
+                    }
+                    
                 }
                 .padding()
             }
             
-            NavigationLink(value: "player") {
-                Text("Continue")
-                    .fontWeight(.semibold)
-                    .font(.system(size: 17))
-                    .frame(maxWidth: .infinity)
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color(red: 0.066, green: 0.463, blue: 0.415))
-                    .cornerRadius(10)
-
-                
-                    .padding(.bottom,20)
-                    .padding(30)
-                    .onTapGesture {
-                        showModal2.toggle()
+            Text("Continue")
+                .fontWeight(.semibold)
+                .font(.system(size: 17))
+                .frame(maxWidth: .infinity)
+                .foregroundColor(.white)
+                .padding()
+                .background(Color(red: 0.066, green: 0.463, blue: 0.415))
+                .cornerRadius(10)
+            
+            
+                .padding(.bottom,20)
+                .padding(30)
+                .onTapGesture {
+                    showModal2.toggle()
+                }
+                .fullScreenCover(isPresented: $showModal2, content: {
+                        ExercisePlayerView()
+                            .environmentObject(router)
+                            .environmentObject(exerciseVM)
                     }
-                    .fullScreenCover(isPresented: $showModal2, content: {ExercisePlayerView(exercise: exercise)})
-                    Spacer()
-//            }
+                )
+            
+            Spacer()
         }
-        
     }
 }
 
