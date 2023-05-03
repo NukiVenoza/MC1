@@ -29,7 +29,7 @@ struct ExerciseDetailView: View {
                     .fontWeight(.semibold)
                     .font(.system(size: 20))
                     .padding(.bottom,15)
-                    
+                
                 
                 HStack {
                     Image(systemName: "timer")
@@ -50,13 +50,13 @@ struct ExerciseDetailView: View {
                     .fontWeight(.regular)
                     .frame(width: 326, height: 72)
                     .font(.system(size: 15))
-                    
-                    
+                
+                
                 
             }
             .padding(.leading,20)
-                .padding()
-                
+            .padding()
+            
             
             NavigationLink(value: "requirement") {
                 Text("Start")
@@ -67,20 +67,22 @@ struct ExerciseDetailView: View {
                     .padding()
                     .background(Color(red: 0.066, green: 0.463, blue: 0.415))
                     .cornerRadius(10)
-//            }
-            .padding(.bottom,20)
-            .padding(30)
-            .onTapGesture {
-                showModal.toggle()
+                //            }
+                    .padding(.bottom,20)
+                    .padding(30)
+                    .onTapGesture {
+                        showModal.toggle()
+                    }
+                    .fullScreenCover(isPresented: $showModal, content:{
+                        ExerciseRequirementView()
+                            .environmentObject(router)
+                            .environmentObject(exerciseVM)
+                    })
+                
             }
-            .fullScreenCover(isPresented: $showModal, content:{
-                ExerciseRequirementView(exercise: exercise)
-            })
-            
-        }
-        .onAppear {
-            exerciseVM.currentEx = exercise
-            print("exercise changed")
+            .onAppear {
+                exerciseVM.currentEx = exercise
+            }
         }
     }
 }
