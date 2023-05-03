@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var userVM = UserViewModel()
+    @StateObject var exerciseVM = ExerciseViewModel()
     @StateObject var router = Router()
     
     var body: some View {
@@ -21,6 +22,7 @@ struct ContentView: View {
                         Text("Exercise")
                     }
                     .environmentObject(userVM)
+                    .environmentObject(exerciseVM)
                     .environmentObject(router)
 
                 MePage()
@@ -30,10 +32,26 @@ struct ContentView: View {
                     }
             }
             .navigationTitle("Focus")
-        }
-        .navigationDestination(for: ExerciseModel.self) { ex in
-            ExerciseDetailView(exercise: ex)
-                .environmentObject(router)
+            .navigationDestination(for: String.self) { path in
+                if path == "requirement" {
+                    ExerciseRequirementView()
+                        .environmentObject(router)
+                        .environmentObject(exerciseVM)
+                } else if path == "player" {
+                    ExercisePlayerView()
+                        .environmentObject(router)
+                        .environmentObject(exerciseVM)
+                } else if path == "done" {
+                    CompletedView()
+                        .environmentObject(router)
+                }
+            }
+            .navigationDestination(for: ExerciseModel.self) { ex in
+                ExerciseDetailView(exercise: ex)
+                    .environmentObject(userVM)
+                    .environmentObject(exerciseVM)
+                    .environmentObject(router)
+            }
         }
     }
         

@@ -9,11 +9,16 @@ import SwiftUI
 
 struct CompletedView: View {
     @EnvironmentObject var router: Router
+    
     @State private var starOpacity = false
     @State private var scale = 3.0
     @State private var circleTextOpacity = false
     @State private var streakOpacity = false
-    @State private var circleStarScale = 1.0
+    @State private var circleScale = 1.0
+    @State private var offsetY: CGFloat = 0
+    @State private var textOpacity = false
+    @State private var text = "Exercise done!"
+    private let lastText = "days of mindfulness!"
     
     var body: some View {
         ZStack {
@@ -27,7 +32,7 @@ struct CompletedView: View {
                         .size(.init(width: 125, height: 125))
                         .foregroundColor(Color(red: 17/255, green: 118/255, blue: 106/255))
                         .opacity(circleTextOpacity ? 1.0 : 0.0)
-                        .scaleEffect(circleStarScale, anchor: .center)
+                        .scaleEffect(circleScale, anchor: .center)
                         .task(delayBadgeScale)
                     
                     Image("star")
@@ -39,24 +44,44 @@ struct CompletedView: View {
                     
                     Text("31")
                         .bold()
-                        .font(.largeTitle)
-                        .offset(y: 30)
+                        .font(.system(size: 96, design: .rounded))
+                        .offset(y: 100)
+                        .opacity(textOpacity ? 1.0 : 0.0)
                 }
+                .offset(y: offsetY)
                 .frame(width: 125, height: 125)
                 
-                Text("Exercise done!")
+                Text(text)
                     .opacity(circleTextOpacity ? 1.0 : 0.0)
-//                    .task(delayDisappear)
                     .font(.system(size: 24))
                     .bold()
                 
                 
-                Button("Next") {
+//                NavigationLink(destination: ExercisePlayerView(exercise: exercise)
+//                    .environmentObject(router)) {
+//
+//                }
+                
+                Button {
                     // dipake buat action dulu ya nti ku percantik lagi
                     router.reset()
+                } label: {
+                    Text("Continue")
+                        .fontWeight(.semibold)
+                        .font(.system(size: 17))
+                        .frame(maxWidth: .infinity)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color(red: 0.066, green: 0.463, blue: 0.415))
+                        .cornerRadius(10)
+
+                    
+                        .padding(.bottom,20)
+                        .padding(30)
                 }
             }
             .frame(maxWidth: .infinity)
+            .transition(AnyTransition.slide)
             .onAppear {
                 withAnimation(.linear(duration: 1.5)) {
                     circleTextOpacity.toggle()
@@ -69,20 +94,19 @@ struct CompletedView: View {
     func delayBadgeScale() async {
         try? await Task.sleep(nanoseconds: 4_000_000_000)
         withAnimation(.easeOut(duration: 1)) {
-            circleStarScale = 0.6
+            circleScale = 0.6
+            scale = 0.6
+            offsetY = -80
+            textOpacity = true
+            text = lastText
         }
     }
     
     func delayScale() async {
         try? await Task.sleep(nanoseconds: 2_000_000_000)
-        withAnimation(.easeInOut(duration: 1)) {
+        withAnimation(.easeOut(duration: 1)) {
             starOpacity.toggle()
             scale = 1.0
-        }
-        
-        try? await Task.sleep(nanoseconds: 1_000_000_000)
-        withAnimation(.easeOut(duration: 1)) {
-            scale = 0.6
         }
     }
     

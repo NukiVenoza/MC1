@@ -9,14 +9,13 @@ import SwiftUI
 
 struct ExerciseDetailView: View {
     @EnvironmentObject var router: Router
+    @EnvironmentObject var exerciseVM: ExerciseViewModel
+    @EnvironmentObject var userVM: UserViewModel
     
     var exercise: ExerciseModel
-//    var background: UIImage
-
-
     
     var body: some View {
-        VStack (alignment: .leading){
+        VStack (alignment: .leading) {
             VStack{
                 Image(exercise.bg)
                     .resizable()
@@ -59,8 +58,7 @@ struct ExerciseDetailView: View {
                 .padding()
                 
             
-            NavigationLink(destination: ExerciseRequirementView(exercise: exercise)
-                .environmentObject(router)) {
+            NavigationLink(value: "requirement") {
                 Text("Start")
                     .fontWeight(.semibold)
                     .font(.system(size: 17))
@@ -72,7 +70,10 @@ struct ExerciseDetailView: View {
             }
             .padding(.bottom,20)
             .padding(30)
-            
+        }
+        .onAppear {
+            exerciseVM.currentEx = exercise
+            print("exercise changed")
         }
     }
 }
@@ -81,5 +82,7 @@ struct ExerciseDetailView_Previews: PreviewProvider {
     static var previews: some View {
         ExerciseDetailView(exercise: ExerciseModel(id: 1, name: "3 Minutes Breath", duration: "3 Minutes", desc: "Using mindfulness of breathing for short periods at set times and when required. Best for dealing with mind wandering, and learning to be gentle with yourself.", requirement: ["Airpods or a conducive place", "A safe place for sit or lay down", "Turn on focus mode or do not disturb"], icon: "icon3MB", backgroundURL: "Cards/3MB", bg: "bg3MB"))
             .environmentObject(Router())
+            .environmentObject(UserViewModel())
+            .environmentObject(ExerciseViewModel())
     }
 }
