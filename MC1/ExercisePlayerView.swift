@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ExercisePlayerView: View {
     @EnvironmentObject var router: Router
-    @EnvironmentObject var userVM: UserViewModel
-    
+    @ObservedObject var audioPlayer = AudioPlayer()
+
     var exercise: ExerciseModel
     
     @State var firstRun = false
@@ -50,7 +50,7 @@ struct ExercisePlayerView: View {
                     .scaleEffect(startAnimate ? 1.3 : 1.0)
                     .frame(maxWidth: 198, maxHeight: 198)
                     .animation(
-                        .linear(duration: 1.0).repeatCount(repeatAnimation), value: self.animationColor
+                        .easeInOut(duration: 2.0).repeatCount(repeatAnimation), value: self.animationColor
                     )
                     .foregroundColor(animationColor)
                 
@@ -71,12 +71,16 @@ struct ExercisePlayerView: View {
                         repeatAnimation = 200
                         
                         animationColor = Color(red: 35 / 255, green: 171 / 255, blue: 155 / 255, opacity: 100)
+                        
+                        audioPlayer.play()
                     } else {
 //                        progressBarOpacity = 0.0
                         
                         animationColor = Color(red: 17 / 255, green: 118 / 255, blue: 106 / 255, opacity: 100)
                         
                         repeatAnimation = 0
+                        
+                        audioPlayer.pause()
                     }
                     
                 }) {
@@ -84,6 +88,7 @@ struct ExercisePlayerView: View {
                         .resizable()
                         .frame(width: 81, height: 101)
                         .padding(.leading, isPlaying ? 0 : 10)
+                        
                 }
             }
             
@@ -115,7 +120,7 @@ struct ExercisePlayerView: View {
             .opacity(firstRun ?  1.0 : 0.0)
             .onAppear {
                 // Nanti diganti total duration dari sound yg dipake
-                totalTime = 2.0
+                totalTime = exercise.audioDuration
             }
             .onReceive(Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()) { _ in
 
@@ -130,21 +135,24 @@ struct ExercisePlayerView: View {
                         scaleAnimate = false
                         repeatAnimation = 0
                         animationColor = Color(red: 17 / 255, green: 118 / 255, blue: 106 / 255, opacity: 100)
+                        audioPlayer.stop()
                         router.path.append("done")
 
                     }
-                } 
+                }
             }
         }
         .navigationDestination(for: String.self) { path in
             if path == "done" {
                 CompletedView()
                     .environmentObject(router)
-                    .environmentObject(userVM)
+
             }
         }
         .navigationBarBackButtonHidden()
-        
+        .onAppear(){
+            audioPlayer.firstPlay(audioName: exercise.audioName)
+        }
     }
     
     func formatTime(_ time: Double) -> String {
@@ -156,7 +164,8 @@ struct ExercisePlayerView: View {
 
 struct ExercisePlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        ExercisePlayerView(exercise: ExerciseModel(id: 1, name: "3 Minutes Breath", duration: "3 Minutes", desc: "Using mindfulness of breathing for short periods at set times and when required. Best for dealing with mind wandering, and learning to be gentle with yourself.", requirement: ["Airpods or a conducive place", "A safe place for sit or lay down", "Turn on focus mode or do not disturb"], icon: "icon3MB", backgroundURL: "Cards/3MB", bg: "bg3MB"))
+        ExercisePlayerView(exercise: ExerciseModel(id: 1, name: "3 Minutes Breath", duration: "3 Minutes", desc: "Using mindfulness of breathing for short periods at set times and when required. Best for dealing with mind wandering, and learning to be gentle with yourself.", requirement: ["Airpods or a conducive place", "A safe place for sit or lay down", "Turn on focus mode or do not disturb"], icon: "icon3MB", backgroundURL: "Cards/3MB", bg: "bg3MB", audioDuration: 207, audioName: "3MB Audio"))
             .environmentObject(Router())
     }
 }
+
