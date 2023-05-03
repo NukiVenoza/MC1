@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ExercisePlayerView: View {
+    @EnvironmentObject var userVM: UserViewModel
     @EnvironmentObject var router: Router
     @ObservedObject var audioPlayer = AudioPlayer()
 
@@ -121,6 +122,7 @@ struct ExercisePlayerView: View {
             .onAppear {
                 // Nanti diganti total duration dari sound yg dipake
                 totalTime = exercise.audioDuration
+
             }
             .onReceive(Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()) { _ in
 
@@ -146,6 +148,7 @@ struct ExercisePlayerView: View {
             if path == "done" {
                 CompletedView()
                     .environmentObject(router)
+                    .environmentObject(userVM)
 
             }
         }

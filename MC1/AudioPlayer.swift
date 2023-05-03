@@ -12,7 +12,7 @@ class AudioPlayer: ObservableObject {
     var player: AVAudioPlayer?
     
     func firstPlay(audioName: String) {
-        if let bundle = Bundle.main.path(forResource: audioName, ofType: "mp4") {
+        if let bundle = Bundle.main.path(forResource: audioName, ofType: "m4a") {
             let music = NSURL(fileURLWithPath: bundle)
             
             do {
