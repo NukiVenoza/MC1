@@ -10,4 +10,9 @@ import Foundation
 struct User: Identifiable {
     var id = UUID()
     var name: String
+    
+    // Streak
+    var exerciseDay: [Date]
+    var currentStreak: Int
+    var highestStreak: Int
 }

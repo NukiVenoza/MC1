@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MePage: View {
+    @EnvironmentObject var userVM: UserViewModel
+    @StateObject var calendarVM = CalendarViewModel()
+    
     @State var pushNotification: Bool = true
     @State var vibrationMode: Bool = true
     
@@ -16,10 +19,16 @@ struct MePage: View {
     @State private var showDateModal = false
     @State private var buttonOpacity = 1.0
     
-    let days = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+//    let days = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+    var currentWeek = [Date]()
+    let formatter = DateFormatter()
+    
+    init() {
+        currentWeek = calendarVM.getDatesOfCurrentWeek()
+        formatter.dateFormat = "EEE"
+    }
     
     var body: some View {
-        
         NavigationView {
             VStack (spacing: 20){
                 Text("Streak")
@@ -30,9 +39,9 @@ struct MePage: View {
                     .foregroundColor(Color(red: 30 / 255, green: 30 / 255, blue: 30 / 255, opacity: 100))
                 
                 HStack (spacing: 14){
-                    ForEach(days, id: \.self) { day in
+                    ForEach(currentWeek, id: \.self) { day in
                         VStack{
-                            Text(day)
+                            Text(formatter.string(from: day))
                                 .foregroundColor(.white)
                                 .font(.system(size: 12))
                             
@@ -41,10 +50,11 @@ struct MePage: View {
                                     .frame(maxWidth: 30)
                                     .foregroundColor(.white)
                                 
-                                
-                                Image("star")
-                                    .resizable()
-                                    .frame(maxWidth: 25, maxHeight: 25)
+                                if userVM.getExerciseDaysWithoutTimeStamp().contains(userVM.removeTimeStamp(fromDate: day)){
+                                    Image("star")
+                                        .resizable()
+                                        .frame(maxWidth: 25, maxHeight: 25)
+                                }
                             }
                             
                         }
@@ -58,7 +68,7 @@ struct MePage: View {
                 HStack (spacing: 12){
                     VStack{
                         
-                        Text("🔥 12")
+                        Text("🔥 \(userVM.getCurrentStreak())")
                             .font(.system(size: 24))
                             .fontWeight(.bold)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -74,13 +84,13 @@ struct MePage: View {
                     .cornerRadius(10)
                     
                     VStack{
-                        Text("🏆 32")
+                        Text("🏆 \(userVM.getHighestStreak())")
                             .font(.system(size: 24))
                             .fontWeight(.bold)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.leading)
                         
-                        Text("Current Streak")
+                        Text("Highest Streak")
                             .font(.system(size: 16))
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.leading)

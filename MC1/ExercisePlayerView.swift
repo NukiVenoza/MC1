@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ExercisePlayerView: View {
     @EnvironmentObject var router: Router
+    @EnvironmentObject var userVM: UserViewModel
     
     var exercise: ExerciseModel
     
@@ -139,7 +140,7 @@ struct ExercisePlayerView: View {
             if path == "done" {
                 CompletedView()
                     .environmentObject(router)
-
+                    .environmentObject(userVM)
             }
         }
         .navigationBarBackButtonHidden()

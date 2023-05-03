@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ExerciseDetailView: View {
+    @EnvironmentObject var userVM: UserViewModel
     @EnvironmentObject var router: Router
     
     var exercise: ExerciseModel
@@ -60,7 +61,8 @@ struct ExerciseDetailView: View {
                 
             
             NavigationLink(destination: ExerciseRequirementView(exercise: exercise)
-                .environmentObject(router)) {
+                .environmentObject(router)
+                .environmentObject(userVM)) {
                 Text("Start")
                     .fontWeight(.semibold)
                     .font(.system(size: 17))

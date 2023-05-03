@@ -29,7 +29,9 @@ struct ContentView: View {
                     .tabItem {
                         Image(systemName: "gear")
                         Text("Me")
-                    }.tag(2)
+                    }
+                    .tag(2)
+                    .environmentObject(userVM)
             }
             .navigationTitle(selection == 1 ? "Focus" : "Me")
         }

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06CA93E129FFF4F800A001C7 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CA93E029FFF4F800A001C7 /* WidgetKit.framework */; };
+		06CA93E329FFF4F800A001C7 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CA93E229FFF4F800A001C7 /* SwiftUI.framework */; };
+		06CA93E629FFF4F800A001C7 /* MendfulWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CA93E529FFF4F800A001C7 /* MendfulWidgetBundle.swift */; };
+		06CA93E829FFF4F800A001C7 /* MendfulWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CA93E729FFF4F800A001C7 /* MendfulWidget.swift */; };
+		06CA93EA29FFF4F900A001C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06CA93E929FFF4F900A001C7 /* Assets.xcassets */; };
+		06CA93EE29FFF4F900A001C7 /* MendfulWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 06CA93DE29FFF4F800A001C7 /* MendfulWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		06CA93F42A00F79300A001C7 /* WidgetQuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CA93F32A00F79300A001C7 /* WidgetQuotesViewModel.swift */; };
+		06CA93FF2A02201B00A001C7 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CA93FE2A02201B00A001C7 /* CalendarViewModel.swift */; };
 		0B0CD44A2A001C7C0077EC90 /* CompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0CD4492A001C7C0077EC90 /* CompletedView.swift */; };
 		0B0CD44C2A00FCBC0077EC90 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0CD44B2A00FCBC0077EC90 /* Router.swift */; };
 		0B1F741229F281EB009C4901 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F741129F281EB009C4901 /* QuoteModel.swift */; };
@@ -31,7 +39,42 @@
 		D0984DDA29F26FDD0090E88A /* MePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0984DD929F26FDD0090E88A /* MePage.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		06CA93EC29FFF4F900A001C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0285F2E29EFF32600B9D73D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06CA93DD29FFF4F800A001C7;
+			remoteInfo = MendfulWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		06CA93EF29FFF4F900A001C7 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				06CA93EE29FFF4F900A001C7 /* MendfulWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		06CA93DE29FFF4F800A001C7 /* MendfulWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MendfulWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		06CA93E029FFF4F800A001C7 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		06CA93E229FFF4F800A001C7 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		06CA93E529FFF4F800A001C7 /* MendfulWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MendfulWidgetBundle.swift; sourceTree = "<group>"; };
+		06CA93E729FFF4F800A001C7 /* MendfulWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MendfulWidget.swift; sourceTree = "<group>"; };
+		06CA93E929FFF4F900A001C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		06CA93EB29FFF4F900A001C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06CA93F32A00F79300A001C7 /* WidgetQuotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetQuotesViewModel.swift; sourceTree = "<group>"; };
+		06CA93F72A012A9E00A001C7 /* MendfulWidgetExtension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MendfulWidgetExtension.entitlements; sourceTree = "<group>"; };
+		06CA93F82A012AB300A001C7 /* MC1.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MC1.entitlements; sourceTree = "<group>"; };
+		06CA93FE2A02201B00A001C7 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		0B0CD4492A001C7C0077EC90 /* CompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedView.swift; sourceTree = "<group>"; };
 		0B0CD44B2A00FCBC0077EC90 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		0B1F741129F281EB009C4901 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuoteModel.swift; path = MC1/Model/QuoteModel.swift; sourceTree = SOURCE_ROOT; };
@@ -57,6 +100,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		06CA93DB29FFF4F800A001C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06CA93E329FFF4F800A001C7 /* SwiftUI.framework in Frameworks */,
+				06CA93E129FFF4F800A001C7 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D0285F3329EFF32600B9D73D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -68,10 +120,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06CA93DF29FFF4F800A001C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06CA93E029FFF4F800A001C7 /* WidgetKit.framework */,
+				06CA93E229FFF4F800A001C7 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		06CA93E429FFF4F800A001C7 /* MendfulWidget */ = {
+			isa = PBXGroup;
+			children = (
+				06CA93E529FFF4F800A001C7 /* MendfulWidgetBundle.swift */,
+				06CA93E729FFF4F800A001C7 /* MendfulWidget.swift */,
+				06CA93F32A00F79300A001C7 /* WidgetQuotesViewModel.swift */,
+				06CA93E929FFF4F900A001C7 /* Assets.xcassets */,
+				06CA93EB29FFF4F900A001C7 /* Info.plist */,
+			);
+			path = MendfulWidget;
+			sourceTree = "<group>";
+		};
 		D0285F2D29EFF32600B9D73D = {
 			isa = PBXGroup;
 			children = (
+				06CA93F72A012A9E00A001C7 /* MendfulWidgetExtension.entitlements */,
 				D0285F3829EFF32600B9D73D /* MC1 */,
+				06CA93E429FFF4F800A001C7 /* MendfulWidget */,
+				06CA93DF29FFF4F800A001C7 /* Frameworks */,
 				D0285F3729EFF32600B9D73D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				D0285F3629EFF32600B9D73D /* MC1.app */,
+				06CA93DE29FFF4F800A001C7 /* MendfulWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +164,7 @@
 		D0285F3829EFF32600B9D73D /* MC1 */ = {
 			isa = PBXGroup;
 			children = (
+				06CA93F82A012AB300A001C7 /* MC1.entitlements */,
 				0BBC032D29FBD63F008FEB19 /* HStackScrollingModifier.swift */,
 				0B61701029FD80F90020A2DE /* EndlessHorizontalScrollingView.swift */,
 				D0285F3929EFF32600B9D73D /* MC1App.swift */,
@@ -130,6 +208,7 @@
 				D0984DD329F26F810090E88A /* BannerViewModel.swift */,
 				D0984DD529F26F950090E88A /* ExerciseViewModel.swift */,
 				0B1F741329F28656009C4901 /* UserViewModel.swift */,
+				06CA93FE2A02201B00A001C7 /* CalendarViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -147,6 +226,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		06CA93DD29FFF4F800A001C7 /* MendfulWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06CA93F229FFF4F900A001C7 /* Build configuration list for PBXNativeTarget "MendfulWidgetExtension" */;
+			buildPhases = (
+				06CA93DA29FFF4F800A001C7 /* Sources */,
+				06CA93DB29FFF4F800A001C7 /* Frameworks */,
+				06CA93DC29FFF4F800A001C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MendfulWidgetExtension;
+			productName = MendfulWidgetExtension;
+			productReference = 06CA93DE29FFF4F800A001C7 /* MendfulWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D0285F3529EFF32600B9D73D /* MC1 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0285F4429EFF32700B9D73D /* Build configuration list for PBXNativeTarget "MC1" */;
@@ -154,10 +250,12 @@
 				D0285F3229EFF32600B9D73D /* Sources */,
 				D0285F3329EFF32600B9D73D /* Frameworks */,
 				D0285F3429EFF32600B9D73D /* Resources */,
+				06CA93EF29FFF4F900A001C7 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				06CA93ED29FFF4F900A001C7 /* PBXTargetDependency */,
 			);
 			name = MC1;
 			packageProductDependencies = (
@@ -177,6 +275,9 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					06CA93DD29FFF4F800A001C7 = {
+						CreatedOnToolsVersion = 14.3;
+					};
 					D0285F3529EFF32600B9D73D = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -199,11 +300,20 @@
 			projectRoot = "";
 			targets = (
 				D0285F3529EFF32600B9D73D /* MC1 */,
+				06CA93DD29FFF4F800A001C7 /* MendfulWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		06CA93DC29FFF4F800A001C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06CA93EA29FFF4F900A001C7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D0285F3429EFF32600B9D73D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,6 +326,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		06CA93DA29FFF4F800A001C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06CA93F42A00F79300A001C7 /* WidgetQuotesViewModel.swift in Sources */,
+				06CA93E629FFF4F800A001C7 /* MendfulWidgetBundle.swift in Sources */,
+				06CA93E829FFF4F800A001C7 /* MendfulWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D0285F3229EFF32600B9D73D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -224,6 +344,7 @@
 				0B1F741429F28656009C4901 /* UserViewModel.swift in Sources */,
 				D0219A0429FC191F000BFC61 /* ExercisePlayerView.swift in Sources */,
 				D0984DDA29F26FDD0090E88A /* MePage.swift in Sources */,
+				06CA93FF2A02201B00A001C7 /* CalendarViewModel.swift in Sources */,
 				D0984DCE29F26E5B0090E88A /* ExerciseCard.swift in Sources */,
 				0BBC032E29FBD63F008FEB19 /* HStackScrollingModifier.swift in Sources */,
 				0B0CD44C2A00FCBC0077EC90 /* Router.swift in Sources */,
@@ -244,7 +365,71 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		06CA93ED29FFF4F900A001C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06CA93DD29FFF4F800A001C7 /* MendfulWidgetExtension */;
+			targetProxy = 06CA93EC29FFF4F900A001C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		06CA93F029FFF4F900A001C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MendfulWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZKP7U4QRRG;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MendfulWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MendfulWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nukivenoza.MC1.MendfulWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		06CA93F129FFF4F900A001C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MendfulWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZKP7U4QRRG;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MendfulWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MendfulWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nukivenoza.MC1.MendfulWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		D0285F4229EFF32700B9D73D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -362,8 +547,10 @@
 		D0285F4529EFF32700B9D73D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MC1/MC1.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MC1/Preview Content\"";
@@ -392,8 +579,10 @@
 		D0285F4629EFF32700B9D73D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MC1/MC1.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MC1/Preview Content\"";
@@ -422,6 +611,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		06CA93F229FFF4F900A001C7 /* Build configuration list for PBXNativeTarget "MendfulWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06CA93F029FFF4F900A001C7 /* Debug */,
+				06CA93F129FFF4F900A001C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D0285F3129EFF32600B9D73D /* Build configuration list for PBXProject "MC1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
