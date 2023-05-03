@@ -10,13 +10,18 @@ import Foundation
 struct WidgetQuotesViewModel {
     var beforeQuotes = [
         "Let's be present!",
-        "Time to mend!"
+        "Time to mend!",
+        "Be present today!",
+        "Let's practice mindfulness!",
+        "Let's calm our minds!"
     ]
     
     var afterQuotes = [
         "One step at a time!",
         "Well done!",
-        "Proud of you!"
+        "Proud of you!",
+        "Self-care accomplished",
+        "Mind, body connected"
     ]
     
     func getBefore() -> String {

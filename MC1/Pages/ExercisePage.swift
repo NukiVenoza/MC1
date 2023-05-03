@@ -154,6 +154,7 @@ struct ExercisePage: View {
         .navigationDestination(for: ExerciseModel.self) { ex in
             ExerciseDetailView(exercise: ex)
                 .environmentObject(router)
+                .environmentObject(userVM)
         }
     }
 }

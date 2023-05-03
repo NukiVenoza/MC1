@@ -28,6 +28,7 @@ struct ContentView: View {
                         Image(systemName: "gear")
                         Text("Me")
                     }
+                    .environmentObject(userVM)
             }
             .navigationTitle("Focus")
         }

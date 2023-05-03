@@ -14,6 +14,7 @@
 		06CA93EA29FFF4F900A001C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06CA93E929FFF4F900A001C7 /* Assets.xcassets */; };
 		06CA93EE29FFF4F900A001C7 /* MendfulWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 06CA93DE29FFF4F800A001C7 /* MendfulWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		06CA93F42A00F79300A001C7 /* WidgetQuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CA93F32A00F79300A001C7 /* WidgetQuotesViewModel.swift */; };
+		06CA93FF2A02201B00A001C7 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CA93FE2A02201B00A001C7 /* CalendarViewModel.swift */; };
 		0B0CD44A2A001C7C0077EC90 /* CompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0CD4492A001C7C0077EC90 /* CompletedView.swift */; };
 		0B0CD44C2A00FCBC0077EC90 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0CD44B2A00FCBC0077EC90 /* Router.swift */; };
 		0B1F741229F281EB009C4901 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F741129F281EB009C4901 /* QuoteModel.swift */; };
@@ -71,6 +72,9 @@
 		06CA93E929FFF4F900A001C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06CA93EB29FFF4F900A001C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06CA93F32A00F79300A001C7 /* WidgetQuotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetQuotesViewModel.swift; sourceTree = "<group>"; };
+		06CA93F72A012A9E00A001C7 /* MendfulWidgetExtension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MendfulWidgetExtension.entitlements; sourceTree = "<group>"; };
+		06CA93F82A012AB300A001C7 /* MC1.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MC1.entitlements; sourceTree = "<group>"; };
+		06CA93FE2A02201B00A001C7 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		0B0CD4492A001C7C0077EC90 /* CompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedView.swift; sourceTree = "<group>"; };
 		0B0CD44B2A00FCBC0077EC90 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		0B1F741129F281EB009C4901 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuoteModel.swift; path = MC1/Model/QuoteModel.swift; sourceTree = SOURCE_ROOT; };
@@ -140,6 +144,7 @@
 		D0285F2D29EFF32600B9D73D = {
 			isa = PBXGroup;
 			children = (
+				06CA93F72A012A9E00A001C7 /* MendfulWidgetExtension.entitlements */,
 				D0285F3829EFF32600B9D73D /* MC1 */,
 				06CA93E429FFF4F800A001C7 /* MendfulWidget */,
 				06CA93DF29FFF4F800A001C7 /* Frameworks */,
@@ -159,6 +164,7 @@
 		D0285F3829EFF32600B9D73D /* MC1 */ = {
 			isa = PBXGroup;
 			children = (
+				06CA93F82A012AB300A001C7 /* MC1.entitlements */,
 				0BBC032D29FBD63F008FEB19 /* HStackScrollingModifier.swift */,
 				0B61701029FD80F90020A2DE /* EndlessHorizontalScrollingView.swift */,
 				D0285F3929EFF32600B9D73D /* MC1App.swift */,
@@ -202,6 +208,7 @@
 				D0984DD329F26F810090E88A /* BannerViewModel.swift */,
 				D0984DD529F26F950090E88A /* ExerciseViewModel.swift */,
 				0B1F741329F28656009C4901 /* UserViewModel.swift */,
+				06CA93FE2A02201B00A001C7 /* CalendarViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -337,6 +344,7 @@
 				0B1F741429F28656009C4901 /* UserViewModel.swift in Sources */,
 				D0219A0429FC191F000BFC61 /* ExercisePlayerView.swift in Sources */,
 				D0984DDA29F26FDD0090E88A /* MePage.swift in Sources */,
+				06CA93FF2A02201B00A001C7 /* CalendarViewModel.swift in Sources */,
 				D0984DCE29F26E5B0090E88A /* ExerciseCard.swift in Sources */,
 				0BBC032E29FBD63F008FEB19 /* HStackScrollingModifier.swift in Sources */,
 				0B0CD44C2A00FCBC0077EC90 /* Router.swift in Sources */,
@@ -371,6 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MendfulWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZKP7U4QRRG;
@@ -398,6 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MendfulWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZKP7U4QRRG;
@@ -540,6 +550,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MC1/MC1.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MC1/Preview Content\"";
@@ -571,6 +582,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MC1/MC1.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MC1/Preview Content\"";
