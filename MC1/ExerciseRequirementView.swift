@@ -10,12 +10,13 @@ import SwiftUI
 struct ExerciseRequirementView: View {
     @EnvironmentObject var userVM: UserViewModel
     @EnvironmentObject var router: Router
+    @EnvironmentObject var exerciseVM: ExerciseViewModel
     @Environment(\.presentationMode) var presentationMode
     @State var showModal2 = false
     
-    var exercise: ExerciseModel
-    
     var body: some View {
+        let exercise = exerciseVM.getCurrentExercise()
+        
         VStack{
             HStack{
                 Button(action:{
@@ -61,10 +62,7 @@ struct ExerciseRequirementView: View {
                 .padding()
             }
             
-//            NavigationLink(destination: ExercisePlayerView(exercise: exercise)
-//                .environmentObject(router)
-//                .environmentObject(userVM)) {
-            .padding(.bottom,50)
+            NavigationLink(value: "player") {
                 Text("Continue")
                     .fontWeight(.semibold)
                     .font(.system(size: 17))
@@ -91,7 +89,8 @@ struct ExerciseRequirementView: View {
 
 struct ExerciseRequirementView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseRequirementView(exercise: ExerciseModel(id: 1, name: "3 Minutes Breath", duration: "3 Minutes", desc: "Using mindfulness of breathing for short periods at set times and when required. Best for dealing with mind wandering, and learning to be gentle with yourself.", requirement: ["Airpods or a conducive place", "A safe place for sit or lay down", "Turn on focus mode or do not disturb"], icon: "icon3MB", backgroundURL: "Cards/3MB", bg: "bg3MB", audioDuration: 207, audioName: "3MB Audio"))
+        ExerciseRequirementView()
             .environmentObject(Router())
+            .environmentObject(ExerciseViewModel())
     }
 }

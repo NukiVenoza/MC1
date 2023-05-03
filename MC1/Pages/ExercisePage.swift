@@ -11,9 +11,9 @@ import SwiftUIPager
 struct ExercisePage: View {
     @EnvironmentObject var userVM: UserViewModel
     @EnvironmentObject var router: Router
+    @EnvironmentObject var exerciseVM: ExerciseViewModel
     
     @StateObject var bannerVM = BannerViewModel()
-    @StateObject var exerciseVM = ExerciseViewModel()
     
     @State var currIndex = 0
     @State var indexes = [2, 0, 1]
@@ -70,7 +70,9 @@ struct ExercisePage: View {
                     GeometryReader { geometry in
                         HStack(spacing: 30) {
                             ForEach(indexes, id: \.self) { idx in
-                                NavigationLink(value: exerciseVM.exercises[idx]) {
+                                Button {
+                                    router.path.append(exerciseVM.exercises[idx])
+                                } label: {
                                     ExerciseCard(exercise: exerciseVM.exercises[idx])
                                 }
                                 .simultaneousGesture(DragGesture()
@@ -150,13 +152,6 @@ struct ExercisePage: View {
                 
             }
         }
-        .navigationDestination(for: ExerciseModel.self) { ex in
-            ExerciseDetailView(exercise: ex)
-                .environmentObject(router)
-                .environmentObject(userVM)
-        }
-        .navigationTitle("Focus")
-
     }
 }
 
@@ -165,5 +160,6 @@ struct ExercisePage_Previews: PreviewProvider {
         ExercisePage()
             .environmentObject(UserViewModel())
             .environmentObject(Router())
+            .environmentObject(ExerciseViewModel())
     }
 }
