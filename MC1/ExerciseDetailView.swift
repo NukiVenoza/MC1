@@ -10,7 +10,7 @@ import SwiftUI
 struct ExerciseDetailView: View {
     @EnvironmentObject var userVM: UserViewModel
     @EnvironmentObject var router: Router
-    
+    @State var showModal = false
     var exercise: ExerciseModel
 //    var background: UIImage
 
@@ -60,9 +60,9 @@ struct ExerciseDetailView: View {
                 .padding()
                 
             
-            NavigationLink(destination: ExerciseRequirementView(exercise: exercise)
-                .environmentObject(router)
-                .environmentObject(userVM)) {
+//            NavigationLink(destination: ExerciseRequirementView(exercise: exercise)
+//                .environmentObject(router)
+//                .environmentObject(userVM)) {
                 Text("Start")
                     .fontWeight(.semibold)
                     .font(.system(size: 17))
@@ -71,9 +71,15 @@ struct ExerciseDetailView: View {
                     .padding()
                     .background(Color(red: 0.066, green: 0.463, blue: 0.415))
                     .cornerRadius(10)
-            }
+//            }
             .padding(.bottom,20)
             .padding(30)
+            .onTapGesture {
+                showModal.toggle()
+            }
+            .fullScreenCover(isPresented: $showModal, content:{
+                ExerciseRequirementView(exercise: exercise)
+            })
             
         }
     }

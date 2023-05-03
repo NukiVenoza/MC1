@@ -11,6 +11,7 @@ struct ExercisePlayerView: View {
     @EnvironmentObject var userVM: UserViewModel
     @EnvironmentObject var router: Router
     @ObservedObject var audioPlayer = AudioPlayer()
+    @Environment(\.presentationMode) var presentationMode
 
     var exercise: ExerciseModel
     
@@ -36,7 +37,7 @@ struct ExercisePlayerView: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    // Attach the action to dismiss the view
+                    presentationMode.wrappedValue.dismiss()
                 }) {
                     Image(systemName: "xmark.circle.fill")
                         .font(.system(size: 30))

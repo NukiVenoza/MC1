@@ -139,6 +139,7 @@ struct MendfulWidgetEntryView : View {
 //            }
             
         }
+        .preferredColorScheme(.light)
     }
 }
 

@@ -10,11 +10,24 @@ import SwiftUI
 struct ExerciseRequirementView: View {
     @EnvironmentObject var userVM: UserViewModel
     @EnvironmentObject var router: Router
+    @Environment(\.presentationMode) var presentationMode
+    @State var showModal2 = false
     
     var exercise: ExerciseModel
     
     var body: some View {
         VStack{
+            HStack{
+                Button(action:{
+                    presentationMode.wrappedValue.dismiss()
+                }){
+                    Text("Close")
+                        .foregroundColor(Color(red: 0.066, green: 0.463, blue: 0.415))
+                        
+                }
+                .padding(.leading,20)
+                Spacer()
+            }
             Image(exercise.icon)
                 .resizable()
                 .frame(width: 200, height: 200)
@@ -48,9 +61,10 @@ struct ExerciseRequirementView: View {
                 .padding()
             }
             
-            NavigationLink(destination: ExercisePlayerView(exercise: exercise)
-                .environmentObject(router)
-                .environmentObject(userVM)) {
+//            NavigationLink(destination: ExercisePlayerView(exercise: exercise)
+//                .environmentObject(router)
+//                .environmentObject(userVM)) {
+            .padding(.bottom,50)
                 Text("Continue")
                     .fontWeight(.semibold)
                     .font(.system(size: 17))
@@ -63,7 +77,12 @@ struct ExerciseRequirementView: View {
                 
                     .padding(.bottom,20)
                     .padding(30)
-            }
+                    .onTapGesture {
+                        showModal2.toggle()
+                    }
+                    .fullScreenCover(isPresented: $showModal2, content: {ExercisePlayerView(exercise: exercise)})
+                    Spacer()
+//            }
         }
         
     }
