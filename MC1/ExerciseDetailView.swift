@@ -86,7 +86,7 @@ struct ExerciseDetailView: View {
                     .onTapGesture {
                         showModal.toggle()
                     }
-                    .fullScreenCover(isPresented: $showModal, content:{
+                    .sheet(isPresented: $showModal, content:{
                         ExerciseRequirementView()
                             .environmentObject(router)
                             .environmentObject(exerciseVM)

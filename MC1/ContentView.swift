@@ -38,7 +38,7 @@ struct ContentView: View {
 //                                .foregroundColor(Color.white)
 
                         }
-                     
+                    
                         
                     }.tag(1)
                     .environmentObject(userVM)
