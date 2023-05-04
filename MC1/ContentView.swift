@@ -14,14 +14,32 @@ struct ContentView: View {
     
     @State var selection = 1
     
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor(red: 26/255, green: 97/255, blue: 88/255, alpha: 1)
+        
+        UITabBar.appearance().unselectedItemTintColor = UIColor(Color.white)
+    }
+    
     var body: some View {
 //        EndlessHorizontalScrollingView()
+        
         NavigationStack(path: $router.path) {
             TabView(selection: $selection) {
                 ExercisePage()
                     .tabItem {
-                        Image(systemName: "house")
-                        Text("Exercise")
+                        VStack{
+                            Image(selection == 1 ? "focus-active" : "focus-inactive")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 32, height: 32)
+                
+                            Image(systemName: "person")
+                            Text("Focus")
+//                                .foregroundColor(Color.white)
+
+                        }
+                    
+                        
                     }.tag(1)
                     .environmentObject(userVM)
                     .environmentObject(exerciseVM)
@@ -29,12 +47,18 @@ struct ContentView: View {
 
                 MePage()
                     .tabItem {
-                        Image(systemName: "gear")
+                        Image(selection == 2 ? "me-active" : "me-inactive")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 32, height: 32)
                         Text("Me")
+                            .foregroundColor(Color.white)
+
                     }
                     .tag(2)
                     .environmentObject(userVM)
             }
+            .accentColor(Color.white)
             .navigationTitle(selection == 1 ? "Focus" : "Me")
             .navigationDestination(for: String.self) { path in
                 if path == "requirement" {
@@ -58,6 +82,7 @@ struct ContentView: View {
                     .environmentObject(router)
             }
         }
+        .navigationBarBackButtonHidden()
     }
         
 }

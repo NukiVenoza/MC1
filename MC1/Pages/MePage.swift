@@ -14,21 +14,27 @@ struct MePage: View {
     @State var pushNotification: Bool = true
     @State var vibrationMode: Bool = true
     
-    @State var currentDate = Date.now
+//    @State private var currentDate = Date.now
+    @State private var currentDate = UserDefaults.standard.object(forKey: "notificationDate") as? Date ?? Date.now
     
     @State private var showDateModal = false
     @State private var buttonOpacity = 1.0
     
-//    let days = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+    //    let days = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
     var currentWeek = [Date]()
     let formatter = DateFormatter()
+    
+    let notify = NotificationHandler()
     
     init() {
         currentWeek = calendarVM.getDatesOfCurrentWeek()
         formatter.dateFormat = "EEE"
+        
+        notify.askPermission()
     }
     
     var body: some View {
+        
         NavigationView {
             VStack (spacing: 20){
                 Text("Streak")
@@ -42,13 +48,13 @@ struct MePage: View {
                     ForEach(currentWeek, id: \.self) { day in
                         VStack{
                             Text(formatter.string(from: day))
-                                .foregroundColor(.white)
+                                .foregroundColor(Color(red: 26 / 255, green: 97 / 255, blue: 88 / 255, opacity: 100))
                                 .font(.system(size: 12))
                             
                             ZStack{
                                 Circle()
                                     .frame(maxWidth: 30)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(Color(red: 26 / 255, green: 97 / 255, blue: 88 / 255, opacity: 100))
                                 
                                 if userVM.getExerciseDaysWithoutTimeStamp().contains(userVM.removeTimeStamp(fromDate: day)){
                                     Image("star")
@@ -62,41 +68,56 @@ struct MePage: View {
                     
                 }
                 .frame(maxWidth: 360, maxHeight: 90)
-                .background(Color(red: 17 / 255, green: 118 / 255, blue: 106 / 255, opacity: 100.0))
+                .background(Color(red: 17 / 255, green: 118 / 255, blue: 106 / 255, opacity: 0.05))
                 .cornerRadius(10)
                 
                 HStack (spacing: 12){
                     VStack{
-                        
-                        Text("🔥 \(userVM.getCurrentStreak())")
-                            .font(.system(size: 24))
-                            .fontWeight(.bold)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading)
+                        HStack {
+                            Image("star")
+                                .resizable()
+                                .frame(maxWidth: 32, maxHeight: 32)
+                            
+                            Text("\(userVM.getCurrentStreak())")
+                                .font(.system(size: 24))
+                                .foregroundColor(Color(red: 26 / 255, green: 97 / 255, blue: 88 / 255, opacity: 100))
+                                .fontWeight(.bold)
+                                
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading)
                         
                         Text("Current Streak")
                             .font(.system(size: 16))
+                            .foregroundColor(Color(red: 85 / 255, green: 85 / 255, blue: 85 / 255, opacity: 100))
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.leading)
                     }
-                    .frame(maxWidth: 174, maxHeight: 66)
-                    .background(Color(red: 17 / 255, green: 118 / 255, blue: 106 / 255, opacity: 0.17))
+                    .frame(maxWidth: 174, maxHeight: 70)
+                    .background(Color(red: 17 / 255, green: 118 / 255, blue: 106 / 255, opacity: 0.05))
                     .cornerRadius(10)
                     
                     VStack{
-                        Text("🏆 \(userVM.getHighestStreak())")
-                            .font(.system(size: 24))
-                            .fontWeight(.bold)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading)
+                        HStack {
+                            Image("trophy")
+                                .resizable()
+                                .frame(maxWidth: 32, maxHeight: 32)
+                            Text("\(userVM.getHighestStreak())")
+                                .font(.system(size: 24))
+                                .foregroundColor(Color(red: 26 / 255, green: 97 / 255, blue: 88 / 255, opacity: 100))
+                                .fontWeight(.bold)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading)
                         
                         Text("Highest Streak")
                             .font(.system(size: 16))
+                            .foregroundColor(Color(red: 85 / 255, green: 85 / 255, blue: 85 / 255, opacity: 100))
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.leading)
                     }
-                    .frame(maxWidth: 174, maxHeight: 66)
-                    .background(Color(red: 17 / 255, green: 118 / 255, blue: 106 / 255, opacity: 0.17))
+                    .frame(maxWidth: 174, maxHeight: 70)
+                    .background(Color(red: 17 / 255, green: 118 / 255, blue: 106 / 255, opacity: 0.05))
                     .cornerRadius(10)
                     
                 }
@@ -115,8 +136,12 @@ struct MePage: View {
                         Text("Push Notification")
                             .font(.system(size: 15))
                             .foregroundColor(Color(red: 85 / 255, green: 85 / 255, blue: 85 / 255, opacity: 100))
-                        
+                            .onChange(of: pushNotification) { value in
+                                pushNotification.toggle()
+                            }
                     }
+                    
+                    
                     
                     //                    HStack{
                     //                        Text("Wake Up Time")
@@ -150,10 +175,19 @@ struct MePage: View {
                         
                         Spacer()
                         
-                        DatePicker("Wake Up Time", selection: $currentDate, in: ...Date.now, displayedComponents: .hourAndMinute)
+                        DatePicker("Wake Up Time", selection: $currentDate, in: Date()..., displayedComponents: .hourAndMinute)
                             .labelsHidden()
-                            .accentColor(Color(red: 17 / 255, green: 118 / 255, blue: 108 / 255, opacity: 100))
-                        
+                            .accentColor(pushNotification ? Color(red: 17 / 255, green: 118 / 255, blue: 108 / 255, opacity: 100) : Color(red: 48 / 255, green: 48 / 255, blue: 48 / 255, opacity: 0.5))
+                            .onChange(of: currentDate) { time in
+                                notify.sendNotification(
+                                    date: currentDate,
+                                    type: "date",
+                                    title: "Hello!",
+                                    body: "Continue your streak and keep mindfull of yourself!"
+                                )
+                                UserDefaults.standard.set(currentDate, forKey: "notificationDate")
+                            }
+                            .disabled(!pushNotification)
                     }
                     
                     Toggle(isOn: $vibrationMode) {
@@ -169,7 +203,7 @@ struct MePage: View {
                 
             }
             .padding(.top, 10)
-            .navigationTitle("Me")
+            //            .navigationTitle("Me")
         }
     }
     

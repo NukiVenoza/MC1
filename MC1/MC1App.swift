@@ -9,10 +9,19 @@ import SwiftUI
 
 @main
 struct MC1App: App {
+    
+    var firstTime = !UserDefaults.standard.bool(forKey: "firstTime")
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .preferredColorScheme(.light)
+            
+            if firstTime {
+                Onboarding1()
+                    .preferredColorScheme(.light)
+            } else {
+                ContentView()
+                    .preferredColorScheme(.light)
+            }
         }
     }
 }

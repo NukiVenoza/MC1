@@ -20,16 +20,6 @@ struct Provider: TimelineProvider {
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        // reset every day, save exercisedate and compare it to today, save exerciseday when exercise done, so when we reset timeline it compares true
-        
-//        let currentDate = Date()
-//        for hourOffset in 0 ..< 5 {
-//            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-//            let entry = SimpleEntry(date: entryDate)
-//            entries.append(entry)
-//        }
         
         // Generate a timeline with one entry that refreshes at midnight.
         let currentDate = Date()
@@ -52,23 +42,11 @@ struct Provider: TimelineProvider {
             isExercised = false
         }
         
-//        if Calendar.current.isDateInToday(lastExercise) {
-//            isExercised = true
-//        } else {
-//            isExercised = false
-//        }
-        
         let entry = SimpleEntry(
             date: startOfDay,
             isExercised: isExercised,
             streak: UserDefaults(suiteName: "group.MC1")?.integer(forKey: "currentStreak") ?? 0)
         entries.append(entry)
-        
-//        let entry = SimpleEntry(
-//            date: startOfDay,
-//            isExercised: isExercised,
-//            streak: 0)
-//        entries.append(entry)
 
         let timeline = Timeline(entries: entries, policy: .after(endOfDay))
         completion(timeline)
@@ -127,16 +105,6 @@ struct MendfulWidgetEntryView : View {
                     .frame(height: 85)
                     .offset(y: -5)
             }
-            
-//            if entry.isExercised {
-//                Image("WidgetAfter")
-//                    .frame(height: 85)
-//                    .offset(y: -18)
-//            } else {
-//                Image("WidgetBefore")
-//                    .frame(height: 85)
-//                    .offset(y: -5)
-//            }
             
         }
         .preferredColorScheme(.light)

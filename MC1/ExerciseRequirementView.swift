@@ -37,6 +37,7 @@ struct ExerciseRequirementView: View {
                 .fontWeight(.bold)
                 .font(.system(size: 22))
                 .padding(50)
+                .frame(width: 400)
             
             VStack(alignment: .leading){
                 ForEach(exercise.requirement, id: \.self) { list in
@@ -86,6 +87,7 @@ struct ExerciseRequirementView: View {
             
             Spacer()
         }
+        .foregroundColor(.black)
     }
 }
 
