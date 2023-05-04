@@ -20,46 +20,68 @@ struct ExercisePage: View {
     @State var scrollDirection = "none"
     @State var isDragging = false
     
+    @State var quote = Quote(text: "before", author: "tes")
+    
+//    init() {
+//        quote = bannerVM.getRandomQuotes()
+//    }
+    
     var body: some View {
         ZStack {
             VStack (alignment: .leading, spacing: 50) {
                 VStack(alignment: .leading) {
-                    Text("Welcome, \(userVM.user.name)")
+                    Text("Good Morning, \(userVM.user.name)! 🌻")
                         .font(.title2)
                         .fontWeight(.bold)
                     
                     // Banner
-                    HStack(alignment: .top, spacing: 16) {
-                        RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(
-                                Color(red: 17/255, green: 118/255, blue: 106/255)
-                            )
-                            .frame(width: 5)
-                        
-                        VStack(alignment: .leading, spacing: 8) {
-                            let quote = bannerVM.getRandomQuotes()
-                            Text("Message of the day ✨")
-                                .font(.system(size: 14))
+                    VStack(alignment: .leading){
+                        HStack(alignment: .top) {
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(
+                                    Color(red: 17/255, green: 118/255, blue: 106/255)
+                                )
+                                .frame(width: 5)
+             
                             
-                            Text(quote.text)
-                                .multilineTextAlignment(.leading)
+                            VStack(alignment: .leading) {
+//                                let quote = bannerVM.getRandomQuotes()
+                                //                            Text("Message of the day ✨")
+                                //                                .font(.system(size: 14))
+                                     
+                                Text(quote.text)
+                                    .frame(width:279,alignment: .leading)   
+                                    .multilineTextAlignment(.leading)
+                                      
+                                Spacer()
+                                Text("- \(quote.author)")
+                                    .font(.system(size: 14))
+                                
+                            }
+                            //                        .padding(EdgeInsets(top: 20, leading: 5, bottom: 5, trailing: 20))
+                            .padding(.top,20)
+                            .padding(.bottom,20)
+//                            .padding(.trailing,60)
+                            .onAppear {
+                                if self.quote.text == "\"" + "before" + "\"" {
+                                    self.quote = bannerVM.getRandomQuotes()
+                                }
+                                
+                            }
                             
-                            Text("- \(quote.author)")
-                                .font(.system(size: 14))
                             
+                            //                        Image(systemName: "arrow.clockwise")
+                            //                            .padding()
+                            Spacer()
                         }
-                        .padding(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
-                        .frame(maxWidth: .infinity)
-                        
-                        Image(systemName: "arrow.clockwise")
-                            .padding()
                     }
                     .frame(maxWidth: .infinity, maxHeight: 150)
                     .background(
                         Color(red: 17/255, green: 118/255, blue: 106/255)
-                            .opacity(0.17)
+                            .opacity(0.05)
                     )
-                    .cornerRadius(10)
+                    .cornerRadius(5)
+                    .padding(.trailing, 16)
                 }
                 
                 VStack(alignment: .leading) {

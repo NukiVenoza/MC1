@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ExercisePlayerView: View {
+    @State private var isActive = false
     @EnvironmentObject var userVM: UserViewModel
     @EnvironmentObject var router: Router
     @EnvironmentObject var exerciseVM: ExerciseViewModel
@@ -141,9 +142,16 @@ struct ExercisePlayerView: View {
                         animationColor = Color(red: 17 / 255, green: 118 / 255, blue: 106 / 255, opacity: 100)
                         audioPlayer.stop()
 //                        router.path.append("done")
+                        isActive = true
                     }
                 }
             }
+            .background(
+                NavigationLink(destination: CompletedView().environmentObject(router).environmentObject(userVM), isActive: $isActive) {
+                    EmptyView()
+                }
+                
+            )
         }
         .navigationBarBackButtonHidden()
         .onAppear(){
