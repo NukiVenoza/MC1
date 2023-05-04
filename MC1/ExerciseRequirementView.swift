@@ -79,9 +79,11 @@ struct ExerciseRequirementView: View {
                     showModal2.toggle()
                 }
                 .fullScreenCover(isPresented: $showModal2, content: {
+                    NavigationView{
                         ExercisePlayerView()
                             .environmentObject(router)
                             .environmentObject(exerciseVM)
+                    }
                     }
                 )
             

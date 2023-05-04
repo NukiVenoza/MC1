@@ -24,7 +24,7 @@ struct ExerciseDetailView: View {
             }
             
             VStack(alignment: .leading){
-                Text(exercise.name)
+                Text(exercise.tagLine)
                     .foregroundColor(.black)
                     .fontWeight(.semibold)
                     .font(.system(size: 20))
@@ -32,16 +32,29 @@ struct ExerciseDetailView: View {
                 
                 
                 HStack {
-                    Image(systemName: "timer")
-                        .resizable()
-                        .frame(width: 25, height: 25)
-                        .foregroundColor(Color(red: 0.066, green: 0.463, blue: 0.415))
-                    
-                    Text(exercise.duration)
-                        .fontWeight(.regular)
-                        .font(.system(size: 17))
-                        .foregroundColor(Color(red: 0.3333333333333333, green: 0.3333333333333333, blue: 0.3333333333333333))
-                    
+                    HStack{
+                        Image(systemName: "waveform")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            .foregroundColor(Color(red: 0.066, green: 0.463, blue: 0.415))
+                        
+                        Text(exercise.name)
+                            .fontWeight(.regular)
+                            .font(.system(size: 17))
+                            .foregroundColor(Color(red: 0.3333333333333333, green: 0.3333333333333333, blue: 0.3333333333333333))
+                    }
+                    .padding(.trailing,20)
+                    HStack{
+                        Image(systemName: "timer")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            .foregroundColor(Color(red: 0.066, green: 0.463, blue: 0.415))
+                        
+                        Text(exercise.duration)
+                            .fontWeight(.regular)
+                            .font(.system(size: 17))
+                            .foregroundColor(Color(red: 0.3333333333333333, green: 0.3333333333333333, blue: 0.3333333333333333))
+                    }
                 }
                 .padding(.bottom,15)
                 
@@ -89,7 +102,7 @@ struct ExerciseDetailView: View {
 
 struct ExerciseDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseDetailView(exercise: ExerciseModel(id: 1, name: "3 Minutes Breath", duration: "3 Minutes", desc: "Using mindfulness of breathing for short periods at set times and when required. Best for dealing with mind wandering, and learning to be gentle with yourself.", requirement: ["Airpods or a conducive place", "A safe place for sit or lay down", "Turn on focus mode or do not disturb"], icon: "icon3MB", backgroundURL: "Cards/3MB", bg: "bg3MB", audioDuration: 207, audioName: "3MB Audio"))
+        ExerciseDetailView(exercise: ExerciseModel(id: 1, name: "3 Minutes Breath", duration: "3:27", desc: "Using mindfulness of breathing for short periods at set times and when required. Best for dealing with mind wandering, and learning to be gentle with yourself.", requirement: ["Airpods or a conducive place", "A safe place for sit or lay down", "Turn on focus mode or do not disturb"], icon: "icon3MB", backgroundURL: "Cards/3MB", bg: "bg3MB", audioDuration: 207, audioName: "3MB Audio", tagLine: "In a Hurry"))
             .environmentObject(Router())
             .environmentObject(UserViewModel())
             .environmentObject(ExerciseViewModel())
