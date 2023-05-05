@@ -12,6 +12,7 @@ struct ExercisePage: View {
     @EnvironmentObject var userVM: UserViewModel
     @EnvironmentObject var router: Router
     @EnvironmentObject var exerciseVM: ExerciseViewModel
+    @EnvironmentObject var subtitleVM: SubtitleViewModel
     
     @StateObject var bannerVM = BannerViewModel()
     
@@ -213,5 +214,6 @@ struct ExercisePage_Previews: PreviewProvider {
             .environmentObject(UserViewModel())
             .environmentObject(Router())
             .environmentObject(ExerciseViewModel())
+            .environmentObject(SubtitleViewModel())
     }
 }

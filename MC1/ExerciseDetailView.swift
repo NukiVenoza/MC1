@@ -11,6 +11,7 @@ struct ExerciseDetailView: View {
     @EnvironmentObject var userVM: UserViewModel
     @EnvironmentObject var router: Router
     @EnvironmentObject var exerciseVM: ExerciseViewModel
+    @EnvironmentObject var subtitleVM: SubtitleViewModel
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     @State var showModal = false
     var exercise: ExerciseModel
@@ -107,6 +108,7 @@ struct ExerciseDetailView: View {
                         ExerciseRequirementView()
                             .environmentObject(router)
                             .environmentObject(exerciseVM)
+                            .environmentObject(subtitleVM)
                     })
                 
             }
@@ -123,5 +125,6 @@ struct ExerciseDetailView_Previews: PreviewProvider {
             .environmentObject(Router())
             .environmentObject(UserViewModel())
             .environmentObject(ExerciseViewModel())
+            .environmentObject(SubtitleViewModel())
     }
 }
