@@ -12,6 +12,7 @@ struct ExercisePlayerView: View {
     @EnvironmentObject var userVM: UserViewModel
     @EnvironmentObject var router: Router
     @EnvironmentObject var exerciseVM: ExerciseViewModel
+    @EnvironmentObject var subtitleVM: SubtitleViewModel
     
     @ObservedObject var audioPlayer = AudioPlayer()
     @Environment(\.presentationMode) var presentationMode
@@ -33,29 +34,35 @@ struct ExercisePlayerView: View {
     @State private var currentTime: Double = 0.0
     @State private var totalTime: Double = 0.0
     
+    @State private var subtitleIdx = 0
+    @State private var text = ""
+    
     var body: some View {
         let exercise = exerciseVM.getCurrentExercise()
         
-        VStack{
-            HStack {
-                Spacer()
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image(systemName: "xmark.circle.fill")
-                        .font(.system(size: 30))
-                        .foregroundColor(Color(red: 116 / 255, green: 116 / 255, blue: 128 / 255, opacity: 0.2))
+        ZStack {
+            VStack {
+                HStack(alignment: .top) {
+                    Spacer()
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.system(size: 30))
+                            .foregroundColor(Color(red: 116 / 255, green: 116 / 255, blue: 128 / 255, opacity: 0.2))
+                    }
                 }
+                .padding()
+                
+                Spacer()
             }
-            .padding()
-            .offset(y: -150)
             
             ZStack{
                 Circle()
                     .scaleEffect(startAnimate ? 1.3 : 1.0)
                     .frame(maxWidth: 198, maxHeight: 198)
                     .animation(
-                        .easeInOut(duration: 2.0).repeatCount(repeatAnimation), value: self.animationColor
+                        .linear(duration: 2.0).repeatCount(repeatAnimation), value: self.animationColor
                     )
                     .foregroundColor(animationColor)
                 
@@ -65,7 +72,9 @@ struct ExercisePlayerView: View {
                 
                 
                 Button(action: {
-                    isPlaying.toggle()
+                    withAnimation(.easeInOut(duration: 0.5)) {
+                        isPlaying.toggle()
+                    }
                     startAnimate.toggle()
                     scaleAnimate.toggle()
                     firstRun = true
@@ -96,30 +105,38 @@ struct ExercisePlayerView: View {
                         
                 }
             }
+            .offset(y: -60)
             
-            VStack{
-                Text(exercise.name)
-                    .font(.system(size: 28))
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color(red: 17 / 255, green: 118 / 255, blue: 106 / 255, opacity: 100))
-                    .padding(.bottom, 10)
+            // text
+            ZStack {
+                if !isPlaying && currentTime == 0 {
+                    Text("Press Start to Begin")
+                        .font(.system(size: 15))
+                } else {
+                    Text(text)
+                        .font(.system(size: 15))
+                        .padding()
+                        .multilineTextAlignment(.center)
+                }
                 
-                Text("Press Start to Begin")
-                    .font(.system(size: 15))
-                    .padding(.bottom, 10)
+                VStack(spacing: 100) {
+                    Text(exercise.name)
+                        .font(.system(size: 28))
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color(red: 17 / 255, green: 118 / 255, blue: 106 / 255, opacity: 100))
+                    
+                    Text("\(formatTime(currentTime))")
+                        .font(.system(size: 15))
+                        .opacity(firstRun ?  1.0 : 0.0)
+                }
             }
-            .padding(.top, 70)
+            .offset(y: 175)
             
-            HStack {
-                Text("\(formatTime(currentTime))")
-                    .font(.system(size: 15))
-            }
-            .opacity(firstRun ?  1.0 : 0.0)
-            
-            VStack{
+            // progress bar
+            VStack {
+                Spacer()
                 ProgressView(value: progress, total: totalTime)
                     .scaleEffect(x: 1, y: 8, anchor: .center)
-                    .offset(y: 120)
                     .tint(Color(red: 17 / 255, green: 118 / 255, blue: 106 / 255, opacity: 100))
             }
             .opacity(firstRun ?  1.0 : 0.0)
@@ -128,11 +145,24 @@ struct ExercisePlayerView: View {
                 totalTime = exercise.audioDuration
 
             }
-            .onReceive(Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()) { _ in
+            .onReceive(Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()) { _ in
 
                 if isPlaying {
-                    currentTime += 0.01
-                    progress = currentTime
+                    withAnimation {
+                        currentTime += 1.0
+                        progress = currentTime
+                    }
+                    
+                    let subtitles = subtitleVM.getOffsets(exerciseId: exercise.id)
+                    
+//                        subtitles
+                    if Int(currentTime) == Int(subtitles[subtitleIdx]) && subtitleIdx < subtitles.count - 1 {
+                        
+                        withAnimation {
+                            text = subtitleVM.getSubtitles(exerciseId: exercise.id)[subtitleIdx].text
+                        }
+                        subtitleIdx += 1
+                    }
                     
                     if currentTime >= totalTime {
                         isPlaying = false
@@ -153,6 +183,7 @@ struct ExercisePlayerView: View {
                 
             )
         }
+        .frame(maxHeight: .infinity)
         .navigationBarBackButtonHidden()
         .onAppear(){
             audioPlayer.firstPlay(audioName: exercise.audioName)
@@ -171,6 +202,7 @@ struct ExercisePlayerView_Previews: PreviewProvider {
         ExercisePlayerView()
             .environmentObject(Router())
             .environmentObject(ExerciseViewModel())
+            .environmentObject(SubtitleViewModel())
     }
 }
 

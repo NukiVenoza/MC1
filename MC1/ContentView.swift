@@ -11,6 +11,7 @@ struct ContentView: View {
     @StateObject var userVM = UserViewModel()
     @StateObject var exerciseVM = ExerciseViewModel()
     @StateObject var router = Router()
+    @ObservedObject var subtitleVM = SubtitleViewModel()
     
     @State var selection = 1
         
@@ -44,6 +45,7 @@ struct ContentView: View {
                     .environmentObject(userVM)
                     .environmentObject(exerciseVM)
                     .environmentObject(router)
+                    .environmentObject(subtitleVM)
 
                 MePage()
                     .tabItem {
@@ -65,10 +67,12 @@ struct ContentView: View {
                     ExerciseRequirementView()
                         .environmentObject(router)
                         .environmentObject(exerciseVM)
+                        .environmentObject(subtitleVM)
                 } else if path == "player" {
                     ExercisePlayerView()
                         .environmentObject(router)
                         .environmentObject(exerciseVM)
+                        .environmentObject(subtitleVM)
                 } else if path == "done" {
                     CompletedView()
                         .environmentObject(router)
@@ -80,6 +84,7 @@ struct ContentView: View {
                     .environmentObject(userVM)
                     .environmentObject(exerciseVM)
                     .environmentObject(router)
+                    .environmentObject(subtitleVM)
             }
         }
         .navigationBarBackButtonHidden()

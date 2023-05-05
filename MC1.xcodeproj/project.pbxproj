@@ -19,18 +19,25 @@
 		06CA94052A04C08B00A001C7 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CA94042A04C08B00A001C7 /* SplashView.swift */; };
 		0B0CD44A2A001C7C0077EC90 /* CompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0CD4492A001C7C0077EC90 /* CompletedView.swift */; };
 		0B0CD44C2A00FCBC0077EC90 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0CD44B2A00FCBC0077EC90 /* Router.swift */; };
+		0B0CD44E2A039C130077EC90 /* SubtitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0CD44D2A039C130077EC90 /* SubtitleModel.swift */; };
+		0B0CD4502A039E6F0077EC90 /* SubtitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0CD44F2A039E6F0077EC90 /* SubtitleViewModel.swift */; };
+		0B0CD4522A03B5830077EC90 /* CustomTimelineScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0CD4512A03B5830077EC90 /* CustomTimelineScheduler.swift */; };
+		0B0CD4542A03B6C50077EC90 /* TimelineSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0CD4532A03B6C50077EC90 /* TimelineSchedule.swift */; };
+		0B0CD4592A041E980077EC90 /* 3MB Audio.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0B0CD4582A041E980077EC90 /* 3MB Audio.m4a */; };
 		0B1F741229F281EB009C4901 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F741129F281EB009C4901 /* QuoteModel.swift */; };
 		0B1F741429F28656009C4901 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F741329F28656009C4901 /* UserViewModel.swift */; };
 		0B1F741629F28661009C4901 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F741529F28661009C4901 /* UserModel.swift */; };
 		0B1F741B29F685B0009C4901 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = 0B1F741A29F685B0009C4901 /* SwiftUIPager */; };
 		0B61701129FD80F90020A2DE /* EndlessHorizontalScrollingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61701029FD80F90020A2DE /* EndlessHorizontalScrollingView.swift */; };
 		0BBC032E29FBD63F008FEB19 /* HStackScrollingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBC032D29FBD63F008FEB19 /* HStackScrollingModifier.swift */; };
+		0BDE950A2A04E81C00C19D35 /* MS Audio.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE95092A04E81C00C19D35 /* MS Audio.m4a */; };
 		1649416829F39F980036424E /* ExerciseRequirementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1649416729F39F980036424E /* ExerciseRequirementView.swift */; };
 		D0219A0429FC191F000BFC61 /* ExercisePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0219A0329FC191F000BFC61 /* ExercisePlayerView.swift */; };
 		D0285F3A29EFF32600B9D73D /* MC1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0285F3929EFF32600B9D73D /* MC1App.swift */; };
 		D0285F3C29EFF32600B9D73D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0285F3B29EFF32600B9D73D /* ContentView.swift */; };
 		D0285F3E29EFF32700B9D73D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0285F3D29EFF32700B9D73D /* Assets.xcassets */; };
 		D0285F4129EFF32700B9D73D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0285F4029EFF32700B9D73D /* Preview Assets.xcassets */; };
+		D0296E0F2A02541E0009E47D /* BS Audio.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D0296E0E2A02541E0009E47D /* BS Audio.m4a */; };
 		D037F82329F80BF40030C590 /* SetTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D037F82229F80BF40030C590 /* SetTimeModel.swift */; };
 		D0984DCE29F26E5B0090E88A /* ExerciseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0984DCD29F26E5B0090E88A /* ExerciseCard.swift */; };
 		D0984DD029F26E730090E88A /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0984DCF29F26E730090E88A /* ExerciseDetailView.swift */; };
@@ -93,11 +100,17 @@
 		06CA94042A04C08B00A001C7 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		0B0CD4492A001C7C0077EC90 /* CompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedView.swift; sourceTree = "<group>"; };
 		0B0CD44B2A00FCBC0077EC90 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		0B0CD44D2A039C130077EC90 /* SubtitleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleModel.swift; sourceTree = "<group>"; };
+		0B0CD44F2A039E6F0077EC90 /* SubtitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleViewModel.swift; sourceTree = "<group>"; };
+		0B0CD4512A03B5830077EC90 /* CustomTimelineScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimelineScheduler.swift; sourceTree = "<group>"; };
+		0B0CD4532A03B6C50077EC90 /* TimelineSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineSchedule.swift; sourceTree = "<group>"; };
+		0B0CD4582A041E980077EC90 /* 3MB Audio.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "3MB Audio.m4a"; sourceTree = "<group>"; };
 		0B1F741129F281EB009C4901 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuoteModel.swift; path = MC1/Model/QuoteModel.swift; sourceTree = SOURCE_ROOT; };
 		0B1F741329F28656009C4901 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		0B1F741529F28661009C4901 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0B61701029FD80F90020A2DE /* EndlessHorizontalScrollingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessHorizontalScrollingView.swift; sourceTree = "<group>"; };
 		0BBC032D29FBD63F008FEB19 /* HStackScrollingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStackScrollingModifier.swift; sourceTree = "<group>"; };
+		0BDE95092A04E81C00C19D35 /* MS Audio.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MS Audio.m4a"; sourceTree = "<group>"; };
 		1649416729F39F980036424E /* ExerciseRequirementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRequirementView.swift; sourceTree = "<group>"; };
 		D0219A0329FC191F000BFC61 /* ExercisePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisePlayerView.swift; sourceTree = "<group>"; };
 		D0285F3629EFF32600B9D73D /* MC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +118,7 @@
 		D0285F3B29EFF32600B9D73D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D0285F3D29EFF32700B9D73D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0285F4029EFF32700B9D73D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D0296E0E2A02541E0009E47D /* BS Audio.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BS Audio.m4a"; sourceTree = "<group>"; };
 		D037F82229F80BF40030C590 /* SetTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimeModel.swift; sourceTree = "<group>"; };
 		D0984DCD29F26E5B0090E88A /* ExerciseCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCard.swift; sourceTree = "<group>"; };
 		D0984DCF29F26E730090E88A /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
@@ -169,6 +183,14 @@
 			path = MendfulWidget;
 			sourceTree = "<group>";
 		};
+		0B0CD4552A03B6D20077EC90 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0B0CD4532A03B6C50077EC90 /* TimelineSchedule.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D0285F2D29EFF32600B9D73D = {
 			isa = PBXGroup;
 			children = (
@@ -205,12 +227,14 @@
 				D0984DCF29F26E730090E88A /* ExerciseDetailView.swift */,
 				1649416729F39F980036424E /* ExerciseRequirementView.swift */,
 				D0219A0329FC191F000BFC61 /* ExercisePlayerView.swift */,
+				0B0CD4512A03B5830077EC90 /* CustomTimelineScheduler.swift */,
 				D0E571CE2A0250AE003AC2EE /* AudioPlayer.swift */,
 				D0984DCC29F26E2D0090E88A /* Pages */,
 				D0984DCB29F26E250090E88A /* ViewModel */,
 				D0984DCA29F26E1F0090E88A /* Model */,
 				D0285F3D29EFF32700B9D73D /* Assets.xcassets */,
 				D0285F3F29EFF32700B9D73D /* Preview Content */,
+				0B0CD4552A03B6D20077EC90 /* Extensions */,
 			);
 			path = MC1;
 			sourceTree = "<group>";
@@ -226,9 +250,9 @@
 		D0296E092A0252100009E47D /* Audio Files */ = {
 			isa = PBXGroup;
 			children = (
-				D0DC117D2A02C974006FA486 /* 3MB Audio.m4a */,
-				D0DC117B2A02C974006FA486 /* BS Audio.m4a */,
-				D0DC117C2A02C974006FA486 /* MS Audio.m4a */,
+				0B0CD4582A041E980077EC90 /* 3MB Audio.m4a */,
+				D0296E0E2A02541E0009E47D /* BS Audio.m4a */,
+				0BDE95092A04E81C00C19D35 /* MS Audio.m4a */,
 			);
 			path = "Audio Files";
 			sourceTree = "<group>";
@@ -240,6 +264,7 @@
 				D0984DD129F26F660090E88A /* ExerciseModel.swift */,
 				0B1F741529F28661009C4901 /* UserModel.swift */,
 				D037F82229F80BF40030C590 /* SetTimeModel.swift */,
+				0B0CD44D2A039C130077EC90 /* SubtitleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,6 +274,7 @@
 			children = (
 				D0984DD329F26F810090E88A /* BannerViewModel.swift */,
 				D0984DD529F26F950090E88A /* ExerciseViewModel.swift */,
+				0B0CD44F2A039E6F0077EC90 /* SubtitleViewModel.swift */,
 				0B1F741329F28656009C4901 /* UserViewModel.swift */,
 				06CA93FE2A02201B00A001C7 /* CalendarViewModel.swift */,
 				D0DC11922A04DC9B006FA486 /* SubtitleViewModel.swift */,
@@ -376,11 +402,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BDE950A2A04E81C00C19D35 /* MS Audio.m4a in Resources */,
 				D0285F4129EFF32700B9D73D /* Preview Assets.xcassets in Resources */,
+				D0296E0F2A02541E0009E47D /* BS Audio.m4a in Resources */,
 				D0285F3E29EFF32700B9D73D /* Assets.xcassets in Resources */,
-				D0DC117F2A02C974006FA486 /* MS Audio.m4a in Resources */,
-				D0DC117E2A02C974006FA486 /* BS Audio.m4a in Resources */,
-				D0DC11802A02C974006FA486 /* 3MB Audio.m4a in Resources */,
+				0B0CD4592A041E980077EC90 /* 3MB Audio.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +435,7 @@
 				D0DC117A2A02AF35006FA486 /* NotificationHandler.swift in Sources */,
 				D0DC11832A039D94006FA486 /* Onboarding1.swift in Sources */,
 				D0984DDA29F26FDD0090E88A /* MePage.swift in Sources */,
+				0B0CD4502A039E6F0077EC90 /* SubtitleViewModel.swift in Sources */,
 				D0DC11932A04DC9B006FA486 /* SubtitleViewModel.swift in Sources */,
 				06CA94012A0497B900A001C7 /* OnboardingName.swift in Sources */,
 				06CA93FF2A02201B00A001C7 /* CalendarViewModel.swift in Sources */,
@@ -418,16 +445,19 @@
 				0BBC032E29FBD63F008FEB19 /* HStackScrollingModifier.swift in Sources */,
 				D0DC11852A039DB6006FA486 /* Onboarding2.swift in Sources */,
 				0B0CD44C2A00FCBC0077EC90 /* Router.swift in Sources */,
+				0B0CD4522A03B5830077EC90 /* CustomTimelineScheduler.swift in Sources */,
 				D0984DD029F26E730090E88A /* ExerciseDetailView.swift in Sources */,
 				06CA94052A04C08B00A001C7 /* SplashView.swift in Sources */,
 				D037F82329F80BF40030C590 /* SetTimeModel.swift in Sources */,
 				D0984DD829F26FCD0090E88A /* ExercisePage.swift in Sources */,
 				0B61701129FD80F90020A2DE /* EndlessHorizontalScrollingView.swift in Sources */,
+				0B0CD4542A03B6C50077EC90 /* TimelineSchedule.swift in Sources */,
 				1649416829F39F980036424E /* ExerciseRequirementView.swift in Sources */,
 				D0984DD429F26F810090E88A /* BannerViewModel.swift in Sources */,
 				D0285F3C29EFF32600B9D73D /* ContentView.swift in Sources */,
 				D0285F3A29EFF32600B9D73D /* MC1App.swift in Sources */,
 				0B0CD44A2A001C7C0077EC90 /* CompletedView.swift in Sources */,
+				0B0CD44E2A039C130077EC90 /* SubtitleModel.swift in Sources */,
 				D0984DD629F26F950090E88A /* ExerciseViewModel.swift in Sources */,
 				0B1F741629F28661009C4901 /* UserModel.swift in Sources */,
 				D0984DD229F26F660090E88A /* ExerciseModel.swift in Sources */,
