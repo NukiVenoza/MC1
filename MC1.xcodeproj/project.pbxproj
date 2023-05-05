@@ -16,6 +16,7 @@
 		06CA93F42A00F79300A001C7 /* WidgetQuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CA93F32A00F79300A001C7 /* WidgetQuotesViewModel.swift */; };
 		06CA93FF2A02201B00A001C7 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CA93FE2A02201B00A001C7 /* CalendarViewModel.swift */; };
 		06CA94012A0497B900A001C7 /* OnboardingName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CA94002A0497B900A001C7 /* OnboardingName.swift */; };
+		06CA94052A04C08B00A001C7 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CA94042A04C08B00A001C7 /* SplashView.swift */; };
 		0B0CD44A2A001C7C0077EC90 /* CompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0CD4492A001C7C0077EC90 /* CompletedView.swift */; };
 		0B0CD44C2A00FCBC0077EC90 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0CD44B2A00FCBC0077EC90 /* Router.swift */; };
 		0B1F741229F281EB009C4901 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F741129F281EB009C4901 /* QuoteModel.swift */; };
@@ -88,6 +89,7 @@
 		06CA93F82A012AB300A001C7 /* MC1.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MC1.entitlements; sourceTree = "<group>"; };
 		06CA93FE2A02201B00A001C7 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		06CA94002A0497B900A001C7 /* OnboardingName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingName.swift; sourceTree = "<group>"; };
+		06CA94042A04C08B00A001C7 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		0B0CD4492A001C7C0077EC90 /* CompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedView.swift; sourceTree = "<group>"; };
 		0B0CD44B2A00FCBC0077EC90 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		0B1F741129F281EB009C4901 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuoteModel.swift; path = MC1/Model/QuoteModel.swift; sourceTree = SOURCE_ROOT; };
@@ -271,6 +273,7 @@
 				D0DC11882A039DE4006FA486 /* Onboarding4.swift */,
 				D0DC118A2A039DF7006FA486 /* Onboarding5.swift */,
 				D0DC118C2A039E13006FA486 /* Onboarding6.swift */,
+				06CA94042A04C08B00A001C7 /* SplashView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				D0DC11852A039DB6006FA486 /* Onboarding2.swift in Sources */,
 				0B0CD44C2A00FCBC0077EC90 /* Router.swift in Sources */,
 				D0984DD029F26E730090E88A /* ExerciseDetailView.swift in Sources */,
+				06CA94052A04C08B00A001C7 /* SplashView.swift in Sources */,
 				D037F82329F80BF40030C590 /* SetTimeModel.swift in Sources */,
 				D0984DD829F26FCD0090E88A /* ExercisePage.swift in Sources */,
 				0B61701129FD80F90020A2DE /* EndlessHorizontalScrollingView.swift in Sources */,
