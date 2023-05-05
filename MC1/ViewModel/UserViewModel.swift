@@ -10,7 +10,7 @@ import WidgetKit
 
 class UserViewModel: ObservableObject {
     // harus tambahin code untuk baca user dari userDefaults
-    @Published var user = User(name: "Guest",
+    @Published var user = User(name: UserDefaults.standard.string(forKey: "username") ?? "Guest",
                                exerciseDay: UserDefaults(suiteName: "group.MC1")?.array(forKey: "exerciseDays") as? [Date] ?? [],
                                currentStreak: UserDefaults(suiteName: "group.MC1")?.integer(forKey: "currentStreak") ?? 0,
                                highestStreak: UserDefaults(suiteName: "group.MC1")?.integer(forKey: "highestStreak") ?? 0)

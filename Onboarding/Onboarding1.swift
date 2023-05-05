@@ -51,7 +51,9 @@ struct Onboarding1: View {
                 }
             }
             .ignoresSafeArea()
-        }    }
+        }
+        .navigationBarBackButtonHidden()
+    }
 }
 
 struct Onboarding1_Previews: PreviewProvider {

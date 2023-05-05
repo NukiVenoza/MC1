@@ -91,6 +91,7 @@ struct MendfulWidgetEntryView : View {
             if entry.isExercised {
                 Text(quotesVM.getAfter())
                     .font(.footnote)
+                    .foregroundColor(.black)
                     .bold()
                 
                 Image("WidgetAfter")
@@ -99,6 +100,7 @@ struct MendfulWidgetEntryView : View {
             } else {
                 Text(quotesVM.getBefore())
                     .font(.footnote)
+                    .foregroundColor(.black)
                     .bold()
                 
                 Image("WidgetBefore")
@@ -107,7 +109,6 @@ struct MendfulWidgetEntryView : View {
             }
             
         }
-        .preferredColorScheme(.light)
     }
 }
 
@@ -117,6 +118,8 @@ struct MendfulWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             MendfulWidgetEntryView(entry: entry)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color.white)
         }
         .configurationDisplayName("Mendful")
         .description("Add this widget to keep track of your streak.")
