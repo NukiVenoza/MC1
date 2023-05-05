@@ -19,7 +19,7 @@ class AudioPlayer: ObservableObject {
                 player = try AVAudioPlayer(contentsOf: music as URL)
                 
                 guard let player = player else {return}
-                player.numberOfLoops = -1
+                player.numberOfLoops = 0
                 player.prepareToPlay()
             } catch {
                 print(error)

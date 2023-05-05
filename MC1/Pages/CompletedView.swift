@@ -22,7 +22,7 @@ struct CompletedView: View {
     @State private var text = "Exercise done!"
     private let lastText = "days of mindfulness!"
     
-    @State private var btnOpacity = 0.0
+//    @State private var btnOpacity = 0.0
     
     var body: some View {
         ZStack {
@@ -69,7 +69,6 @@ struct CompletedView: View {
                         .padding()
                         .background(Color(red: 0.066, green: 0.463, blue: 0.415))
                         .cornerRadius(10)
-                        .opacity(btnOpacity)
                     
                         .padding(.bottom,20)
                         .padding(30)
