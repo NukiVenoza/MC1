@@ -46,9 +46,9 @@ struct OnboardingName: View {
                     .frame(width: 120, height: 50)
                     .background(RoundedRectangle(cornerRadius: 14).fill(Color.white))
                     .padding(.top, 50)
-                    .onTapGesture {
+                    .simultaneousGesture(TapGesture().onEnded {
                         UserDefaults.standard.set(name, forKey: "username")
-                    }
+                    })
 
                 }
             }
