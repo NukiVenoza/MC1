@@ -49,6 +49,7 @@
 		D0DC11892A039DE4006FA486 /* Onboarding4.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DC11882A039DE4006FA486 /* Onboarding4.swift */; };
 		D0DC118B2A039DF7006FA486 /* Onboarding5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DC118A2A039DF7006FA486 /* Onboarding5.swift */; };
 		D0DC118D2A039E13006FA486 /* Onboarding6.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DC118C2A039E13006FA486 /* Onboarding6.swift */; };
+		D0DC11932A04DC9B006FA486 /* SubtitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DC11922A04DC9B006FA486 /* SubtitleViewModel.swift */; };
 		D0E571CF2A0250AE003AC2EE /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E571CE2A0250AE003AC2EE /* AudioPlayer.swift */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +123,7 @@
 		D0DC11882A039DE4006FA486 /* Onboarding4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding4.swift; sourceTree = "<group>"; };
 		D0DC118A2A039DF7006FA486 /* Onboarding5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding5.swift; sourceTree = "<group>"; };
 		D0DC118C2A039E13006FA486 /* Onboarding6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding6.swift; sourceTree = "<group>"; };
+		D0DC11922A04DC9B006FA486 /* SubtitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleViewModel.swift; sourceTree = "<group>"; };
 		D0E571CE2A0250AE003AC2EE /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,6 +251,7 @@
 				D0984DD529F26F950090E88A /* ExerciseViewModel.swift */,
 				0B1F741329F28656009C4901 /* UserViewModel.swift */,
 				06CA93FE2A02201B00A001C7 /* CalendarViewModel.swift */,
+				D0DC11922A04DC9B006FA486 /* SubtitleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				D0DC117A2A02AF35006FA486 /* NotificationHandler.swift in Sources */,
 				D0DC11832A039D94006FA486 /* Onboarding1.swift in Sources */,
 				D0984DDA29F26FDD0090E88A /* MePage.swift in Sources */,
+				D0DC11932A04DC9B006FA486 /* SubtitleViewModel.swift in Sources */,
 				06CA94012A0497B900A001C7 /* OnboardingName.swift in Sources */,
 				06CA93FF2A02201B00A001C7 /* CalendarViewModel.swift in Sources */,
 				D0DC11872A039DCC006FA486 /* Onboarding3.swift in Sources */,

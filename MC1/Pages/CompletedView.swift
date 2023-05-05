@@ -22,11 +22,10 @@ struct CompletedView: View {
     @State private var text = "Exercise done!"
     private let lastText = "days of mindfulness!"
     
+    @State private var btnOpacity = 0.0
+    
     var body: some View {
         ZStack {
-            VStack {
-                
-            }
             
             VStack(spacing: 16) {
                 ZStack {
@@ -46,7 +45,7 @@ struct CompletedView: View {
                 }
                 .frame(width: 125, height: 125)
                 
-                Text("31")
+                Text("\(userVM.getCurrentStreak())")
                     .bold()
                     .font(.system(size: 96, design: .rounded))
 //                    .offset(y: 100)
@@ -70,7 +69,7 @@ struct CompletedView: View {
                         .padding()
                         .background(Color(red: 0.066, green: 0.463, blue: 0.415))
                         .cornerRadius(10)
-
+                        .opacity(btnOpacity)
                     
                         .padding(.bottom,20)
                         .padding(30)
@@ -81,6 +80,7 @@ struct CompletedView: View {
             .onAppear {
                 withAnimation(.linear(duration: 1.5)) {
                     circleTextOpacity.toggle()
+    
                 }
             }
         }

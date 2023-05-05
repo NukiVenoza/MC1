@@ -127,6 +127,7 @@ struct MePage: View {
                     .cornerRadius(10)
                     
                 }
+                .padding(.top, -10)
                 .frame(maxWidth: 360)
                 
                 Text("Settings")
@@ -144,6 +145,10 @@ struct MePage: View {
                             .foregroundColor(Color(red: 85 / 255, green: 85 / 255, blue: 85 / 255, opacity: 100))
                             .onChange(of: pushNotification) { value in
                                 pushNotification.toggle()
+                                
+                                if pushNotification == false {
+                                    notify.removeNotification(identifier: "notificationID")
+                                }
                             }
                     }
                     
@@ -161,27 +166,27 @@ struct MePage: View {
                                 notify.sendNotification(
                                     date: currentDate,
                                     type: "date",
-                                    title: "Hello",
-                                    body: "Continue your streak and keep being mindfull of yourself!"
+                                    title: "Good day, \(userVM.user.name) 🪷",
+                                    body: "Prepare your day with some mindfulness activities with us!"
                                 )
                             }
                             .onChange(of: currentDate) { time in
                                 notify.sendNotification(
                                     date: currentDate,
                                     type: "date",
-                                    title: "Hello!",
-                                    body: "Continue your streak and keep being mindfull of yourself!"
+                                    title: "Good day, \(userVM.user.name) 🪷",
+                                    body: "Prepare your day with some mindfulness activities with us!"
                                 )
                                 UserDefaults.standard.set(currentDate, forKey: "notificationDate")
                             }
                             .disabled(!pushNotification)
                     }
                     
-                    Toggle(isOn: $vibrationMode) {
-                        Text("Vibration Mode")
-                            .font(.system(size: 15))
-                            .foregroundColor(Color(red: 85 / 255, green: 85 / 255, blue: 85 / 255, opacity: 100))
-                    }
+//                    Toggle(isOn: $vibrationMode) {
+//                        Text("Vibration Mode")
+//                            .font(.system(size: 15))
+//                            .foregroundColor(Color(red: 85 / 255, green: 85 / 255, blue: 85 / 255, opacity: 100))
+//                    }
                     
                     
                 }

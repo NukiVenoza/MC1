@@ -11,11 +11,28 @@ struct ExerciseDetailView: View {
     @EnvironmentObject var userVM: UserViewModel
     @EnvironmentObject var router: Router
     @EnvironmentObject var exerciseVM: ExerciseViewModel
+    @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     @State var showModal = false
     var exercise: ExerciseModel
     
     var body: some View {
         VStack (alignment: .leading) {
+            Spacer(minLength: 0)
+                            .navigationBarBackButtonHidden(true)
+                            .toolbar(content:{
+                                ToolbarItem(placement: .navigationBarLeading){
+                                    Button(action: {
+                                        presentationMode.wrappedValue.dismiss()
+                                    }, label: {
+                                        Image(systemName: "chevron.left")
+                                            .foregroundColor(.white)
+                                        Text("Focus")
+                                            .foregroundColor(.white)
+                                            .fontWeight(.regular)
+                                            .font(.system(size: 17))
+                                    })
+                                }
+                            })
             VStack{
                 Image(exercise.bg)
                     .resizable()

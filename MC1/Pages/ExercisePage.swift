@@ -22,6 +22,8 @@ struct ExercisePage: View {
     
     @State var quote = Quote(text: "before", author: "tes")
     
+    @State var hour = Calendar.current.component(.hour, from: Date())
+
 //    init() {
 //        quote = bannerVM.getRandomQuotes()
 //    }
@@ -30,9 +32,37 @@ struct ExercisePage: View {
         ZStack {
             VStack (alignment: .leading, spacing: 50) {
                 VStack(alignment: .leading) {
-                    Text("Good Morning, \(userVM.user.name)! 🌻")
-                        .font(.title2)
-                        .fontWeight(.bold)
+                    
+                    if hour >= 5 && hour < 12 {
+                        Text("Good Morning, \(userVM.user.name)! 🌻")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                    }else if hour >= 12  && hour < 17 {
+                        Text("Good Afternoon, \(userVM.user.name)! ☀️")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                    }
+                    else if hour >= 17  && hour < 21 {
+                        Text("Good Evening, \(userVM.user.name)! 🌇")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                    }
+                    else{
+                        Text("Good Night, \(userVM.user.name)! 🌙")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                    }
+//                    if hour == 6{
+//                        Text("Good Morning, \(userVM.user.name)! 🌻")
+//                            .font(.title2)
+//                            .fontWeight(.bold)
+//                    }
+//                    if hour == 6{
+//                        Text("Good Morning, \(userVM.user.name)! 🌻")
+//                            .font(.title2)
+//                            .fontWeight(.bold)
+                    
+                    
                     
                     // Banner
                     VStack(alignment: .leading){
@@ -50,7 +80,7 @@ struct ExercisePage: View {
                                 //                                .font(.system(size: 14))
                                      
                                 Text(quote.text)
-                                    .frame(width:279,alignment: .leading)   
+                                    .frame(width:279,alignment: .leading)
                                     .multilineTextAlignment(.leading)
                                       
                                 Spacer()
