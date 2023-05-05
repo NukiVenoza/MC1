@@ -138,6 +138,7 @@ struct ExercisePlayerView: View {
                 ProgressView(value: progress, total: totalTime)
                     .scaleEffect(x: 1, y: 8, anchor: .center)
                     .tint(Color(red: 17 / 255, green: 118 / 255, blue: 106 / 255, opacity: 100))
+                    .padding(.bottom, 20)
             }
             .opacity(firstRun ?  1.0 : 0.0)
             .onAppear {

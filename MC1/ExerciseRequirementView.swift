@@ -26,6 +26,7 @@ struct ExerciseRequirementView: View {
                 }){
                     Text("Close")
                         .foregroundColor(Color(red: 0.066, green: 0.463, blue: 0.415))
+                        .padding(.top,20)
                     
                 }
                 .padding(.leading,20)
