@@ -15,6 +15,7 @@
 		06CA93EE29FFF4F900A001C7 /* MendfulWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 06CA93DE29FFF4F800A001C7 /* MendfulWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		06CA93F42A00F79300A001C7 /* WidgetQuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CA93F32A00F79300A001C7 /* WidgetQuotesViewModel.swift */; };
 		06CA93FF2A02201B00A001C7 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CA93FE2A02201B00A001C7 /* CalendarViewModel.swift */; };
+		06CA94012A0497B900A001C7 /* OnboardingName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CA94002A0497B900A001C7 /* OnboardingName.swift */; };
 		0B0CD44A2A001C7C0077EC90 /* CompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0CD4492A001C7C0077EC90 /* CompletedView.swift */; };
 		0B0CD44C2A00FCBC0077EC90 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0CD44B2A00FCBC0077EC90 /* Router.swift */; };
 		0B1F741229F281EB009C4901 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F741129F281EB009C4901 /* QuoteModel.swift */; };
@@ -86,6 +87,7 @@
 		06CA93F72A012A9E00A001C7 /* MendfulWidgetExtension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MendfulWidgetExtension.entitlements; sourceTree = "<group>"; };
 		06CA93F82A012AB300A001C7 /* MC1.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MC1.entitlements; sourceTree = "<group>"; };
 		06CA93FE2A02201B00A001C7 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		06CA94002A0497B900A001C7 /* OnboardingName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingName.swift; sourceTree = "<group>"; };
 		0B0CD4492A001C7C0077EC90 /* CompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedView.swift; sourceTree = "<group>"; };
 		0B0CD44B2A00FCBC0077EC90 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		0B1F741129F281EB009C4901 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuoteModel.swift; path = MC1/Model/QuoteModel.swift; sourceTree = SOURCE_ROOT; };
@@ -262,6 +264,7 @@
 		D0DC11812A039D7F006FA486 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				06CA94002A0497B900A001C7 /* OnboardingName.swift */,
 				D0DC11822A039D94006FA486 /* Onboarding1.swift */,
 				D0DC11842A039DB6006FA486 /* Onboarding2.swift */,
 				D0DC11862A039DCC006FA486 /* Onboarding3.swift */,
@@ -400,6 +403,7 @@
 				D0DC117A2A02AF35006FA486 /* NotificationHandler.swift in Sources */,
 				D0DC11832A039D94006FA486 /* Onboarding1.swift in Sources */,
 				D0984DDA29F26FDD0090E88A /* MePage.swift in Sources */,
+				06CA94012A0497B900A001C7 /* OnboardingName.swift in Sources */,
 				06CA93FF2A02201B00A001C7 /* CalendarViewModel.swift in Sources */,
 				D0DC11872A039DCC006FA486 /* Onboarding3.swift in Sources */,
 				D0DC118B2A039DF7006FA486 /* Onboarding5.swift in Sources */,

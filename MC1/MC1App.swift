@@ -16,7 +16,7 @@ struct MC1App: App {
         WindowGroup {
             
             if firstTime {
-                Onboarding1()
+                OnboardingName()
                     .preferredColorScheme(.light)
             } else {
                 ContentView()
