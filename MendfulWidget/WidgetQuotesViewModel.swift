@@ -12,7 +12,6 @@ struct WidgetQuotesViewModel {
         "Let's be present!",
         "Time to mend!",
         "Be present today!",
-        "Let's practice mindfulness!",
         "Let's calm our minds!"
     ]
     
