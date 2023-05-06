@@ -15,8 +15,6 @@ struct MePage: View {
     @State var vibrationMode: Bool = true
     
     @State private var currentDate = UserDefaults.standard.object(forKey: "notificationDate") as? Date ?? Calendar.current.date(bySettingHour: 8, minute: 0, second: 0, of: Date())!
-
-//    @State private var currentDate = Calendar.current.date(bySettingHour: 8, minute: 0, second: 0, of: Date())!
     
     @State private var showDateModal = false
     @State private var buttonOpacity = 1.0
@@ -29,10 +27,7 @@ struct MePage: View {
     
     
     init() {
-//        defaultDate = calendar.date(from: dateComponents) ?? Date()
-//        currentDate = UserDefaults.standard.object(forKey: "notificationDate") as? Date ?? defaultDate
-//        formatter.timeZone = TimeZone(identifier: "GMT+7")
-
+        
         currentWeek = calendarVM.getDatesOfCurrentWeek()
         formatter.dateFormat = "EEE"
         print(currentDate)
@@ -88,7 +83,7 @@ struct MePage: View {
                                 .font(.system(size: 24))
                                 .foregroundColor(Color.white)
                                 .fontWeight(.bold)
-                                
+                            
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading)
@@ -144,13 +139,19 @@ struct MePage: View {
                             .font(.system(size: 15))
                             .foregroundColor(Color(red: 85 / 255, green: 85 / 255, blue: 85 / 255, opacity: 100))
                             .onChange(of: pushNotification) { value in
-                                pushNotification.toggle()
-                                
-                                if pushNotification == false {
+                                if value == false {
                                     notify.removeNotification(identifier: "notificationID")
+                                } else {
+                                    notify.sendNotification(
+                                        date: currentDate,
+                                        type: "date",
+                                        title: "Good day, \(userVM.user.name) 🪷",
+                                        body: "Prepare your day with some mindfulness activities with us!"
+                                    )
                                 }
                             }
                     }
+                    
                     
                     HStack{
                         Text("Wake Up Time")
@@ -182,13 +183,6 @@ struct MePage: View {
                             .disabled(!pushNotification)
                     }
                     
-//                    Toggle(isOn: $vibrationMode) {
-//                        Text("Vibration Mode")
-//                            .font(.system(size: 15))
-//                            .foregroundColor(Color(red: 85 / 255, green: 85 / 255, blue: 85 / 255, opacity: 100))
-//                    }
-                    
-                    
                 }
                 .listStyle(PlainListStyle())
                 .cornerRadius(10)
@@ -196,7 +190,6 @@ struct MePage: View {
                 
             }
             .padding(.top, 10)
-            //            .navigationTitle("Me")
         }
     }
     

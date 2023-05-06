@@ -50,34 +50,8 @@ struct HStackScrollingModifier: ViewModifier {
                     dragOffset = event.translation.width/2
                 })
                 .onEnded({ event in
-                    // Scroll to where user dragged
-                    var tempScrollOffset = scrollOffset
                     
-//                     Now calculate which item to snap to
-//                    let contentWidth: CGFloat = CGFloat(items) * itemWidth + CGFloat(items - 1) * itemSpacing
-//                    let screenWidth = UIScreen.main.bounds.width
-//
-//                    // Center position of current offset
-//                    let center = scrollOffset + (screenWidth / 2.0) + (contentWidth / 2.0)
-//
-//                    // Calculate which item we are closest to using the defined size
-//                    let idx = (center - (screenWidth / 2.0)) / (itemWidth + itemSpacing)
-//
-//                    // See if user scrolled left or right and adjust index accordingly
-//                    var value: Int = 0
-//
-//                    if idx.remainder(dividingBy: 1) > 0.5 {
-//                        value += 1
-//                    } else {
-//                        value = Int(idx)
-//                    }
-//
-//                    // Protect from scrolling out of bounds
-//                    value = min(value, items - 1)
-//                    value = max(value, 0)
-
-//                    // Set final offset (snapping to item)
-//                    let newOffset = CGFloat(value) * itemWidth + CGFloat(index - 1) * itemSpacing  - (contentWidth / 2.0) + (screenWidth / 2.0) - ((screenWidth - itemWidth) / 2.0) + itemSpacing
+                    var tempScrollOffset = scrollOffset
                     
                     if dragOffset >= 0 {
                         scrollDirection = "left"
@@ -107,10 +81,6 @@ struct HStackScrollingModifier: ViewModifier {
                 })
         
             )
-            // Animate snapping
-//            .animation(Animation
-//                .interactiveSpring(response: 0.5, dampingFraction: 0.855, blendDuration: 0), value: scrollOffset)
-//                .spring(response: 0.5, dampingFraction: 2, blendDuration: 1), value: scrollOffset)
-//                .linear(duration: 2), value: scrollOffset)
+
     }
 }

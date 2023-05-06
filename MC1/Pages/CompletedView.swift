@@ -22,7 +22,6 @@ struct CompletedView: View {
     @State private var text = "Exercise done!"
     private let lastText = "days of mindfulness!"
     
-//    @State private var btnOpacity = 0.0
     
     var body: some View {
         ZStack {

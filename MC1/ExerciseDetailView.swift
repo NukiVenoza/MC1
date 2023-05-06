@@ -76,12 +76,11 @@ struct ExerciseDetailView: View {
                 }
                 .padding(.bottom,15)
                 
-                
-                Text(exercise.desc)
-                    .fontWeight(.regular)
-                    .frame(width: 326, height: 72)
-                    .font(.system(size: 15))
-                
+                ScrollView{
+                    Text(exercise.desc)
+                        .fontWeight(.regular)
+                        .font(.system(size: 15))
+                }.frame(width:326, height:70)
                 
                 
             }
@@ -98,7 +97,6 @@ struct ExerciseDetailView: View {
                     .padding()
                     .background(Color(red: 0.066, green: 0.463, blue: 0.415))
                     .cornerRadius(10)
-                //            }
                     .padding(.bottom,20)
                     .padding(30)
                     .onTapGesture {
