@@ -20,48 +20,6 @@ struct EndlessHorizontalScrollingView: View {
     
     var body: some View {
         NavigationView {
-//            VStack(alignment: .leading) {
-//                Text("Choose Focus Exercise")
-//                    .font(.title2)
-//                    .fontWeight(.bold)
-//
-//                GeometryReader { geometry in
-//                    HStack(spacing: 30) {
-//                        ForEach(indexes, id: \.self) { idx in
-//                            NavigationLink(destination: ExerciseDetailView(exercise: exerciseVM.exercises[idx])) {
-//                                ExerciseCard(exercise: exerciseVM.exercises[idx])
-//                            }
-//                            .frame(width: 189, height: 292)
-//                        }
-//                    }
-//                    .frame(width: geometry.size.width, alignment: .center)
-//                    .modifier(HStackScrollingModifier(items: exerciseVM.exercises.count, itemWidth: 189, itemSpacing: 30, index: $currIndex, direction: $scrollDirection))
-//                }
-//                .onChange(of: currIndex) { newValue in
-//                    // scroll ke kiri
-//                    withAnimation {
-//                        if scrollDirection == "left" {
-//                            if newValue == 2 {
-//                                indexes.insert(1, at: 0)
-//                            } else if newValue == 1 {
-//                                indexes.insert(0, at: 0)
-//                            } else {
-//                                indexes.insert(2, at: 0)
-//                            }
-//                        } else if scrollDirection == "right" {
-//                            if newValue == 2 {
-//                                indexes.append(0)
-//                            } else if newValue == 1 {
-//                                indexes.append(2)
-//                            } else {
-//                                indexes.append(1)
-//                            }
-//                        }
-//                    }
-//                }
-//                .frame(height: 292)
-//            }
-            
             VStack {
                 Text("\(currIndex)")
                 GeometryReader { geometry in
@@ -71,10 +29,8 @@ struct EndlessHorizontalScrollingView: View {
                         }
                     }
                     .frame(width: geometry.size.width, alignment: .center)
-//                    .modifier(HStackScrollingModifier(items: exerciseVM.exercises.count, itemWidth: 189, itemSpacing: 30, index: $currIndex, direction: $scrollDirection))
                 }
                 .onChange(of: currIndex) { _ in
-                    // scroll ke kiri
                     if scrollDirection == "left" {
                         if indexes.first! == 2 {
                             indexes.insert(1, at: 0)
