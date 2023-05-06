@@ -27,9 +27,7 @@ struct ExercisePlayerView: View {
     @State var scaleEffect = 1.0
     @State var repeatAnimation = 200
     
-//    @State private var progressBarOpacity = 0.0
-    
-    //sound progress bar
+
     @State private var progress: Double = 0.0
     @State private var currentTime: Double = 0.0
     @State private var totalTime: Double = 0.0
@@ -80,7 +78,7 @@ struct ExercisePlayerView: View {
                     firstRun = true
                     
                     if startAnimate {
-//                        progressBarOpacity = 1.0
+
                         
                         repeatAnimation = 200
                         
@@ -88,7 +86,7 @@ struct ExercisePlayerView: View {
                         
                         audioPlayer.play()
                     } else {
-//                        progressBarOpacity = 0.0
+
                         
                         animationColor = Color(red: 17 / 255, green: 118 / 255, blue: 106 / 255, opacity: 100)
                         
@@ -132,7 +130,7 @@ struct ExercisePlayerView: View {
             }
             .offset(y: 175)
             
-            // progress bar
+            
             VStack {
                 Spacer()
                 ProgressView(value: progress, total: totalTime)
@@ -142,7 +140,7 @@ struct ExercisePlayerView: View {
             }
             .opacity(firstRun ?  1.0 : 0.0)
             .onAppear {
-                // Nanti diganti total duration dari sound yg dipake
+                
                 totalTime = exercise.audioDuration
 
             }
@@ -156,7 +154,7 @@ struct ExercisePlayerView: View {
                     
                     let subtitles = subtitleVM.getOffsets(exerciseId: exercise.id)
                     
-//                        subtitles
+
                     if Int(currentTime) == Int(subtitles[subtitleIdx]) && subtitleIdx < subtitles.count - 1 {
                         
                         withAnimation {
@@ -172,7 +170,6 @@ struct ExercisePlayerView: View {
                         repeatAnimation = 0
                         animationColor = Color(red: 17 / 255, green: 118 / 255, blue: 106 / 255, opacity: 100)
                         audioPlayer.stop()
-//                        router.path.append("done")
                         isActive = true
                     }
                 }

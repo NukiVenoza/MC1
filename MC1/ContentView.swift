@@ -22,7 +22,6 @@ struct ContentView: View {
     }
     
     var body: some View {
-//        EndlessHorizontalScrollingView()
         
         NavigationStack(path: $router.path) {
             TabView(selection: $selection) {
@@ -36,7 +35,7 @@ struct ContentView: View {
                 
                             Image(systemName: "person")
                             Text("Focus")
-//                                .foregroundColor(Color.white)
+
 
                         }
                     

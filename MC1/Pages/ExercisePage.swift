@@ -26,9 +26,6 @@ struct ExercisePage: View {
     
     @State var hour = Calendar.current.component(.hour, from: Date())
 
-//    init() {
-//        quote = bannerVM.getRandomQuotes()
-//    }
     
     var body: some View {
         ZStack {

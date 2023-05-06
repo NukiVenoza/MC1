@@ -13,14 +13,6 @@ struct ExerciseCard: View {
     var body: some View {
         VStack (alignment: .center){
 
-//            Text(exercise.name)
-//                .font(.title3)
-//                .bold()
-//
-//            Text(exercise.desc)
-//                .font(.caption2)
-//
-//            Spacer()
         }
         .frame(width: 189, height: 292)
         .background(
