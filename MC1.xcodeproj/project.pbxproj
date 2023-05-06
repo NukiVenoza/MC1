@@ -47,9 +47,6 @@
 		D0984DD829F26FCD0090E88A /* ExercisePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0984DD729F26FCD0090E88A /* ExercisePage.swift */; };
 		D0984DDA29F26FDD0090E88A /* MePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0984DD929F26FDD0090E88A /* MePage.swift */; };
 		D0DC117A2A02AF35006FA486 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DC11792A02AF2E006FA486 /* NotificationHandler.swift */; };
-		D0DC117E2A02C974006FA486 /* BS Audio.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D0DC117B2A02C974006FA486 /* BS Audio.m4a */; };
-		D0DC117F2A02C974006FA486 /* MS Audio.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D0DC117C2A02C974006FA486 /* MS Audio.m4a */; };
-		D0DC11802A02C974006FA486 /* 3MB Audio.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D0DC117D2A02C974006FA486 /* 3MB Audio.m4a */; };
 		D0DC11832A039D94006FA486 /* Onboarding1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DC11822A039D94006FA486 /* Onboarding1.swift */; };
 		D0DC11852A039DB6006FA486 /* Onboarding2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DC11842A039DB6006FA486 /* Onboarding2.swift */; };
 		D0DC11872A039DCC006FA486 /* Onboarding3.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DC11862A039DCC006FA486 /* Onboarding3.swift */; };
@@ -113,7 +110,7 @@
 		0BDE95092A04E81C00C19D35 /* MS Audio.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MS Audio.m4a"; sourceTree = "<group>"; };
 		1649416729F39F980036424E /* ExerciseRequirementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRequirementView.swift; sourceTree = "<group>"; };
 		D0219A0329FC191F000BFC61 /* ExercisePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisePlayerView.swift; sourceTree = "<group>"; };
-		D0285F3629EFF32600B9D73D /* MC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0285F3629EFF32600B9D73D /* Mendful..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mendful..app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0285F3929EFF32600B9D73D /* MC1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC1App.swift; sourceTree = "<group>"; };
 		D0285F3B29EFF32600B9D73D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D0285F3D29EFF32700B9D73D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,9 +125,6 @@
 		D0984DD729F26FCD0090E88A /* ExercisePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisePage.swift; sourceTree = "<group>"; };
 		D0984DD929F26FDD0090E88A /* MePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MePage.swift; sourceTree = "<group>"; };
 		D0DC11792A02AF2E006FA486 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
-		D0DC117B2A02C974006FA486 /* BS Audio.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BS Audio.m4a"; sourceTree = "<group>"; };
-		D0DC117C2A02C974006FA486 /* MS Audio.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MS Audio.m4a"; sourceTree = "<group>"; };
-		D0DC117D2A02C974006FA486 /* 3MB Audio.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "3MB Audio.m4a"; sourceTree = "<group>"; };
 		D0DC11822A039D94006FA486 /* Onboarding1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1.swift; sourceTree = "<group>"; };
 		D0DC11842A039DB6006FA486 /* Onboarding2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding2.swift; sourceTree = "<group>"; };
 		D0DC11862A039DCC006FA486 /* Onboarding3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3.swift; sourceTree = "<group>"; };
@@ -206,7 +200,7 @@
 		D0285F3729EFF32600B9D73D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D0285F3629EFF32600B9D73D /* MC1.app */,
+				D0285F3629EFF32600B9D73D /* Mendful..app */,
 				06CA93DE29FFF4F800A001C7 /* MendfulWidgetExtension.appex */,
 			);
 			name = Products;
@@ -346,7 +340,7 @@
 				0B1F741A29F685B0009C4901 /* SwiftUIPager */,
 			);
 			productName = MC1;
-			productReference = D0285F3629EFF32600B9D73D /* MC1.app */;
+			productReference = D0285F3629EFF32600B9D73D /* Mendful..app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -670,7 +664,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nukivenoza.MC1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Mendful.;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -701,7 +695,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nukivenoza.MC1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Mendful.;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

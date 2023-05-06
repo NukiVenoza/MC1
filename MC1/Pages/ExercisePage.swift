@@ -17,9 +17,10 @@ struct ExercisePage: View {
     @StateObject var bannerVM = BannerViewModel()
     
     @State var currIndex = 0
-    @State var indexes = [2, 0, 1]
+    @State var indexes = [1, 2, 0, 1, 2]
     @State var scrollDirection = "none"
     @State var isDragging = false
+    @State var itemCount = 0
     
     @State var quote = Quote(text: "before", author: "tes")
     
@@ -204,6 +205,12 @@ struct ExercisePage: View {
             VStack {
                 
             }
+        }
+        .onAppear {
+            itemCount = indexes.count
+        }
+        .onChange(of: indexes.count) { newValue in
+            itemCount = newValue
         }
     }
 }
