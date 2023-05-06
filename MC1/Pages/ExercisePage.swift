@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftUIPager
 
 struct ExercisePage: View {
     @EnvironmentObject var userVM: UserViewModel
@@ -51,18 +50,7 @@ struct ExercisePage: View {
                             .font(.title2)
                             .fontWeight(.bold)
                     }
-//                    if hour == 6{
-//                        Text("Good Morning, \(userVM.user.name)! 🌻")
-//                            .font(.title2)
-//                            .fontWeight(.bold)
-//                    }
-//                    if hour == 6{
-//                        Text("Good Morning, \(userVM.user.name)! 🌻")
-//                            .font(.title2)
-//                            .fontWeight(.bold)
-                    
-                    
-                    
+               
                     // Banner
                     VStack(alignment: .leading){
                         HStack(alignment: .top) {
@@ -74,9 +62,6 @@ struct ExercisePage: View {
              
                             
                             VStack(alignment: .leading) {
-//                                let quote = bannerVM.getRandomQuotes()
-                                //                            Text("Message of the day ✨")
-                                //                                .font(.system(size: 14))
                                      
                                 Text(quote.text)
                                     .frame(width:279,alignment: .leading)
@@ -87,10 +72,9 @@ struct ExercisePage: View {
                                     .font(.system(size: 14))
                                 
                             }
-                            //                        .padding(EdgeInsets(top: 20, leading: 5, bottom: 5, trailing: 20))
+
                             .padding(.top,20)
                             .padding(.bottom,20)
-//                            .padding(.trailing,60)
                             .onAppear {
                                 if self.quote.text == "\"" + "before" + "\"" {
                                     self.quote = bannerVM.getRandomQuotes()
@@ -98,9 +82,7 @@ struct ExercisePage: View {
                                 
                             }
                             
-                            
-                            //                        Image(systemName: "arrow.clockwise")
-                            //                            .padding()
+
                             Spacer()
                         }
                     }
