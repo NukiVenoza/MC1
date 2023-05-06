@@ -16,7 +16,7 @@ struct Onboarding5: View {
                 
                 VStack{
                     Spacer()
-                        .frame(height: 640)
+                        .frame(height: 610)
                     
                     HStack{
                         Text("You can disable or enable vibration, notification, and change wake up time.")
