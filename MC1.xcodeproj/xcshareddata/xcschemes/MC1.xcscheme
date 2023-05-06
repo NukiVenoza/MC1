@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D0285F3529EFF32600B9D73D"
-               BuildableName = "MC1.app"
+               BuildableName = "Mendful..app"
                BlueprintName = "MC1"
                ReferencedContainer = "container:MC1.xcodeproj">
             </BuildableReference>
@@ -44,7 +44,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D0285F3529EFF32600B9D73D"
-            BuildableName = "MC1.app"
+            BuildableName = "Mendful..app"
             BlueprintName = "MC1"
             ReferencedContainer = "container:MC1.xcodeproj">
          </BuildableReference>
@@ -61,7 +61,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D0285F3529EFF32600B9D73D"
-            BuildableName = "MC1.app"
+            BuildableName = "Mendful..app"
             BlueprintName = "MC1"
             ReferencedContainer = "container:MC1.xcodeproj">
          </BuildableReference>
