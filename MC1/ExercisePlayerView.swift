@@ -171,6 +171,8 @@ struct ExercisePlayerView: View {
                         animationColor = Color(red: 17 / 255, green: 118 / 255, blue: 106 / 255, opacity: 100)
                         audioPlayer.stop()
                         isActive = true
+                        
+                        userVM.updateStreak()
                     }
                 }
             }
