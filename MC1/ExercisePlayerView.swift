@@ -142,6 +142,7 @@ struct ExercisePlayerView: View {
             .onAppear {
                 
                 totalTime = exercise.audioDuration
+                UIApplication.shared.isIdleTimerDisabled = true
 
             }
             .onReceive(Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()) { _ in
@@ -155,12 +156,13 @@ struct ExercisePlayerView: View {
                     let subtitles = subtitleVM.getOffsets(exerciseId: exercise.id)
                     
 
-                    if Int(currentTime) == Int(subtitles[subtitleIdx]) && subtitleIdx < subtitles.count - 1 {
-                        
-                        withAnimation {
-                            text = subtitleVM.getSubtitles(exerciseId: exercise.id)[subtitleIdx].text
+                    if subtitleIdx < subtitles.count {
+                        if Int(currentTime) == Int(subtitles[subtitleIdx])  {
+                            withAnimation {
+                                text = subtitleVM.getSubtitles(exerciseId: exercise.id)[subtitleIdx].text
+                            }
+                            subtitleIdx += 1
                         }
-                        subtitleIdx += 1
                     }
                     
                     if currentTime >= totalTime {
@@ -173,6 +175,7 @@ struct ExercisePlayerView: View {
                         isActive = true
                         
                         userVM.updateStreak()
+                        UIApplication.shared.isIdleTimerDisabled = false
                     }
                 }
             }
