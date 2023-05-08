@@ -31,7 +31,7 @@ struct Provider: TimelineProvider {
         
         let isExercised: Bool
         
-        if let lastExercise = UserDefaults(suiteName: "group.MC1")?.object(forKey: "lastExercise") as? Date {
+        if let lastExercise = UserDefaults(suiteName: "group.workless")?.object(forKey: "lastExercise") as? Date {
             if Calendar.current.isDateInToday(lastExercise) {
                 isExercised = true
             } else {
@@ -45,7 +45,7 @@ struct Provider: TimelineProvider {
         let entry = SimpleEntry(
             date: startOfDay,
             isExercised: isExercised,
-            streak: UserDefaults(suiteName: "group.MC1")?.integer(forKey: "currentStreak") ?? 0)
+            streak: UserDefaults(suiteName: "group.workless")?.integer(forKey: "currentStreak") ?? 0)
         entries.append(entry)
 
         let timeline = Timeline(entries: entries, policy: .after(endOfDay))

@@ -83,9 +83,6 @@ struct CompletedView: View {
             }
         }
         .navigationBarBackButtonHidden()
-        .onAppear {
-            userVM.updateStreak()
-        }
     }
     
     func delayBadgeScale() async {

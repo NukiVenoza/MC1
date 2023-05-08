@@ -72,10 +72,10 @@ class UserViewModel: ObservableObject {
             user.exerciseDay.removeFirst()
         }
         
-        UserDefaults(suiteName: "group.MC1")?.set(user.exerciseDay, forKey: "exerciseDays")
-        UserDefaults(suiteName: "group.MC1")?.set(user.currentStreak, forKey: "currentStreak")
-        UserDefaults(suiteName: "group.MC1")?.set(user.highestStreak, forKey: "highestStreak")
-        UserDefaults(suiteName: "group.MC1")?.set(currentDate, forKey: "lastExercise")
+        UserDefaults(suiteName: "group.workless")?.set(user.exerciseDay, forKey: "exerciseDays")
+        UserDefaults(suiteName: "group.workless")?.set(user.currentStreak, forKey: "currentStreak")
+        UserDefaults(suiteName: "group.workless")?.set(user.highestStreak, forKey: "highestStreak")
+        UserDefaults(suiteName: "group.workless")?.set(currentDate, forKey: "lastExercise")
         WidgetCenter.shared.reloadAllTimelines()
         
     }
