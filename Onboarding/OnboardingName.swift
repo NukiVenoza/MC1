@@ -15,6 +15,8 @@ struct OnboardingName: View {
         NavigationView {
             ZStack {
                 Image("Onboarding_name")
+                    .resizable()
+                    .scaledToFill()
                     .ignoresSafeArea()
                 
                 VStack (spacing: 0) {
