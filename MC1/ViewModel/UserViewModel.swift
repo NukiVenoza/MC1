@@ -10,9 +10,9 @@ import WidgetKit
 
 class UserViewModel: ObservableObject {
     @Published var user = User(name: UserDefaults.standard.string(forKey: "username") ?? "Guest",
-                               exerciseDay: UserDefaults(suiteName: "group.MC1")?.array(forKey: "exerciseDays") as? [Date] ?? [],
-                               currentStreak: UserDefaults(suiteName: "group.MC1")?.integer(forKey: "currentStreak") ?? 0,
-                               highestStreak: UserDefaults(suiteName: "group.MC1")?.integer(forKey: "highestStreak") ?? 0)
+                               exerciseDay: UserDefaults(suiteName: "group.workless")?.array(forKey: "exerciseDays") as? [Date] ?? [],
+                               currentStreak: UserDefaults(suiteName: "group.workless")?.integer(forKey: "currentStreak") ?? 0,
+                               highestStreak: UserDefaults(suiteName: "group.workless")?.integer(forKey: "highestStreak") ?? 0)
     
     func getCurrentStreak() -> Int {
         return user.currentStreak
